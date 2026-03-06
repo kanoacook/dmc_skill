@@ -38,7 +38,9 @@ This skill provides authoritative, version-pinned prop references for **dash-man
 
 ## Reference Files
 
-- **`references/all-components.md`** — Authoritative prop lists for all 181 components
+- **`references/components/`** — Individual .md file per component for quick lookup (e.g., `Button.md`, `Select.md`)
+- **`references/components/INDEX.md`** — Alphabetical index of all 178 components
+- **`references/all-components.md`** — Complete prop lists for all 181 components (fallback reference)
 - **`references/common-mistakes.md`** — Common errors and their corrections (icon→leftSection, onChange→callback, etc.)
 - **`references/patterns.md`** — Correct Dash callback patterns for forms, modals, selects, tabs, etc.
 
@@ -174,10 +176,13 @@ These work on **every DMC component** — you don't need to check per-component:
 ## How to Use This Skill
 
 ### Step 1: Identify Your Component
-Find your component name in `references/all-components.md` (e.g., "Button", "Select", "Modal")
+Find your component name:
+- **Quick lookup**: Read `references/components/ButtonName.md` (e.g., `Button.md`, `Select.md`, `Modal.md`)
+- **Alphabetical index**: Check `references/components/INDEX.md` to find your component's filename
+- **Full reference**: Search `references/all-components.md` for all components
 
 ### Step 2: Check Allowed Props
-Read the prop list for your component. All props must be from that list or shared props above.
+Read the prop list in your component's file. All props must be from that list or the shared props listed below.
 
 ### Step 3: Verify Common Mistakes
 Check `references/common-mistakes.md` — is your prop a known mistake? (e.g., `icon=` should be `leftSection=`)
@@ -243,6 +248,8 @@ Use only props from the authoritative lists. You're now guaranteed to generate v
 
 ## Still Stuck?
 
+- **Check your component's .md file** — `references/components/YourComponent.md` (e.g., `Button.md`)
+- **Check INDEX.md** — Find your component in alphabetical order: `references/components/INDEX.md`
 - **Check patterns.md** — See full working examples for your use case
 - **Check all-components.md** — Verify prop exists and spelling is exact
 - **Check common-mistakes.md** — Is it a known migration issue?
