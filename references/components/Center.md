@@ -2,7 +2,32 @@
 
 **Component**: `dmc.Center`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Box(
+    dmc.Anchor(
+        href="https://mantine.dev",
+        target="_blank",
+        children=dmc.Center(
+            [
+                DashIconify(
+                    icon="tabler:arrow-left",  # Use the Tabler Arrow Left icon
+                    width=12,
+                    height=12,
+                ),
+                dmc.Box("Back to Mantine website", ml=5),
+            ],
+            inline=True,
+        ),
+    )
+)
 
 ---
 
@@ -14,13 +39,7 @@ The following props are specific to this component:
 children, inline
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `inline` | ? | See all-components.md for details |
-
+**Props count**: 2
 
 ---
 
@@ -41,21 +60,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Center(
-    id="my-center",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

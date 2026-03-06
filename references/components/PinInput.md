@@ -1,8 +1,27 @@
-# PinInput
+# Pininput
 
-**Component**: `dmc.PinInput`
+**Component**: `dmc.Pininput`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_component as dmc
+
+dmc.PinInput(
+	# props as configured above:
+	size="sm",
+	length=4,
+	gap="lg",
+	mask=False,
+	placeholder="○",
+	disabled=False,
+	error=False,
+	type="alphanumeric",
+	# other props...
+)
 
 ---
 
@@ -11,36 +30,10 @@
 The following props are specific to this component:
 
 ```
-ariaLabel, autoFocus, disabled, error, form, gap, inputMode, inputType, length, manageFocus, mask, name, oneTimeCode, persisted_props, persistence, persistence_type, placeholder, radius, readOnly, size, type, value
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `ariaLabel` | ? | See all-components.md for details |
-| `autoFocus` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `form` | ? | See all-components.md for details |
-| `gap` | ? | See all-components.md for details |
-| `inputMode` | ? | See all-components.md for details |
-| `inputType` | ? | See all-components.md for details |
-| `length` | ? | See all-components.md for details |
-| `manageFocus` | ? | See all-components.md for details |
-| `mask` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `oneTimeCode` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `placeholder` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -61,21 +54,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.PinInput(
-    id="my-pininput",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

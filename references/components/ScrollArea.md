@@ -1,8 +1,56 @@
-# ScrollArea
+# Scrollarea
 
-**Component**: `dmc.ScrollArea`
+**Component**: `dmc.Scrollarea`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import callback, Input, Output, ctx
+
+
+content = [
+    dmc.Box([
+        dmc.Title(f"Section {i}", order=4, mt="sm", id=f"section-{i}"),
+        dmc.Text("""
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            Dicta perspiciatis reiciendis voluptate eaque itaque quos.
+            Natus iure tenetur libero, reprehenderit ad, sequi, in aliquam eos
+            necessitatibus expedita delectus veniam culpa!            
+        """)
+    ])
+    for i in range(1, 11)
+]
+
+dmc.Box([
+    dmc.ScrollArea(
+        content,
+        id="scrollArea",
+        h=250, w=350,
+    ),
+    dmc.Group([
+        dmc.Button("Scroll to Top", id="scrollto-top"),
+        dmc.Button("Scroll to Middle", id="scrollto-middle"),
+        dmc.Button("Scroll to Bottom", id="scrollto-bottom"),
+    ], mt="lg"),
+])
+
+
+@callback(
+    Output("scrollArea", "scrollTo"),
+    Input("scrollto-top", "n_clicks"),
+    Input("scrollto-middle", "n_clicks"),
+    Input("scrollto-bottom", "n_clicks"),
+)
+def scroll_to(t, m, b):
+    if ctx.triggered_id == "scrollto-middle":
+        return {"top": "50%"}
+    if ctx.triggered_id == "scrollto-bottom":
+        return {"top": "100%"}
+    return {"top": 0}
 
 ---
 
@@ -11,22 +59,10 @@
 The following props are specific to this component:
 
 ```
-children, offsetScrollbars, overscrollBehavior, scrollHideDelay, scrollTo, scrollbarSize, scrollbars, type
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `offsetScrollbars` | ? | See all-components.md for details |
-| `overscrollBehavior` | ? | See all-components.md for details |
-| `scrollHideDelay` | ? | See all-components.md for details |
-| `scrollTo` | ? | See all-components.md for details |
-| `scrollbarSize` | ? | See all-components.md for details |
-| `scrollbars` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -47,21 +83,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.ScrollArea(
-    id="my-scrollarea",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -1,8 +1,37 @@
-# TimeGrid
+# Timegrid
 
-**Component**: `dmc.TimeGrid`
+**Component**: `dmc.Timegrid`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+dmc.Stack([
+    dmc.TimeGrid(
+        timeRangeData={"startTime": "10:00", "endTime": "21:00", "interval": "01:00"},
+        withSeconds=False,
+        simpleGridProps={
+            "type": "container",
+            "cols": {"base": 1, "180px": 2, "320px": 3},
+            "spacing": "xs",
+        },
+        value="10:00:00",
+        id="time-grid"
+    ),
+    dmc.Text(id="time-grid-out")
+])
+
+@callback(
+    Output("time-grid-out", "children"),
+    Input("time-grid", "value")
+)
+def update(value):
+    return f"You selected: {value}"
 
 ---
 
@@ -11,32 +40,10 @@
 The following props are specific to this component:
 
 ```
-allowDeselect, amPmLabels, data, defaultValue, disableTime, disabled, format, maxTime, minTime, persisted_props, persistence, persistence_type, radius, simpleGridProps, size, timeRangeData, value, withSeconds
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `allowDeselect` | ? | See all-components.md for details |
-| `amPmLabels` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `defaultValue` | ? | See all-components.md for details |
-| `disableTime` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `format` | ? | See all-components.md for details |
-| `maxTime` | ? | See all-components.md for details |
-| `minTime` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `simpleGridProps` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `timeRangeData` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withSeconds` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -57,21 +64,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.TimeGrid(
-    id="my-timegrid",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

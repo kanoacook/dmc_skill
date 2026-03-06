@@ -2,7 +2,53 @@
 
 **Component**: `dmc.Overlay`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import Dash, Input, Output, callback, html
+
+
+dmc.Stack([
+        dmc.AspectRatio(
+            ratio=16/9,
+            maw=400,
+            mx="auto",
+            pos="relative",
+            children=[
+                html.Img(
+                    src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/images/bg-7.png",
+                    alt="Demo",
+                ),
+                dmc.Overlay(
+                    id="overlay-gradient",
+                    gradient="linear-gradient(145deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, 0) 100%)",
+                    opacity=0.85,
+                    style={"display": "block"}  # Initially visible
+                )
+            ]
+        ),
+        dmc.Button(
+            "Toggle overlay",
+            id="overlay-toggle-button-gradient",
+            mx="auto",
+            mt="lg",
+            n_clicks=0
+        )
+    ])
+
+
+@callback(
+    Output("overlay-gradient", "style"),
+    Input("overlay-toggle-button-gradient", "n_clicks")
+)
+def toggle_overlay(n_clicks):
+    if n_clicks %2 == 0:
+        return {"display": "block"}
+    return {"display": "none"}
 
 ---
 
@@ -14,20 +60,7 @@ The following props are specific to this component:
 backgroundOpacity, blur, center, children, color, fixed, gradient, radius, zIndex
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `backgroundOpacity` | ? | See all-components.md for details |
-| `blur` | ? | See all-components.md for details |
-| `center` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `fixed` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `zIndex` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +81,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Overlay(
-    id="my-overlay",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

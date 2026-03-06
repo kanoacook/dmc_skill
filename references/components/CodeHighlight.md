@@ -2,7 +2,28 @@
 
 **Component**: `dmc.CodeHighlight`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Stack([
+    dmc.CodeHighlight(
+        code = "dmc.Text('This codeblock has a custom copy button label')",
+        language="python",
+        copyLabel="Copy button code",
+        copiedLabel="Copied!",
+    ),
+    dmc.CodeHighlight(
+            code = "dmc.Text('This codeblock does not have a copy button')",
+            language="python",
+            withCopyButton=False,
+            mt="md"
+        )
+])
 
 ---
 
@@ -14,17 +35,7 @@ The following props are specific to this component:
 code, copiedLabel, copyLabel, highlightOnClient, language, withCopyButton
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `code` | ? | See all-components.md for details |
-| `copiedLabel` | ? | See all-components.md for details |
-| `copyLabel` | ? | See all-components.md for details |
-| `highlightOnClient` | ? | See all-components.md for details |
-| `language` | ? | See all-components.md for details |
-| `withCopyButton` | ? | See all-components.md for details |
-
+**Props count**: 6
 
 ---
 
@@ -45,21 +56,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.CodeHighlight(
-    id="my-codehighlight",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

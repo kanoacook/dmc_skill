@@ -1,10 +1,11 @@
 ---
 name: dash-mantine-components
-description: Accurate prop references for dash-mantine-components v2.4.0. Use when writing, reviewing, or fixing DMC component code to prevent hallucinated attributes and ensure valid Dash callbacks.
+description: Authoritative component documentation and prop references for dash-mantine-components v2.6.0. Official docs content plus complete prop lists. Use when writing, reviewing, or fixing DMC component code.
 license: MIT
 metadata:
-  version: "2.4.0"
+  version: "2.6.0"
   components: 181
+  documented: 104
   generated: "2026-03-06"
 ---
 
@@ -38,9 +39,11 @@ This skill provides authoritative, version-pinned prop references for **dash-man
 
 ## Reference Files
 
-- **`references/components/`** — Individual .md file per component for quick lookup (e.g., `Button.md`, `Select.md`)
-- **`references/components/INDEX.md`** — Alphabetical index of all 178 components
-- **`references/all-components.md`** — Complete prop lists for all 181 components (fallback reference)
+- **`references/components/`** — Individual .md file per component with official documentation (e.g., `Button.md`, `Select.md`)
+  - Each file includes: overview, examples, props list, and best practices
+  - 104 components with full documentation extracted from DMC official docs
+- **`references/components/INDEX.md`** — Alphabetical index of all documented components
+- **`references/all-components.md`** — Complete prop lists for all 181 components (fallback/reference)
 - **`references/common-mistakes.md`** — Common errors and their corrections (icon→leftSection, onChange→callback, etc.)
 - **`references/patterns.md`** — Correct Dash callback patterns for forms, modals, selects, tabs, etc.
 
@@ -175,23 +178,28 @@ These work on **every DMC component** — you don't need to check per-component:
 
 ## How to Use This Skill
 
-### Step 1: Identify Your Component
-Find your component name:
-- **Quick lookup**: Read `references/components/ButtonName.md` (e.g., `Button.md`, `Select.md`, `Modal.md`)
-- **Alphabetical index**: Check `references/components/INDEX.md` to find your component's filename
-- **Full reference**: Search `references/all-components.md` for all components
+### Step 1: Read Official Documentation for Your Component
+Find your component and read its official documentation:
+- **Read first**: `references/components/ButtonName.md` (e.g., `Button.md`, `Select.md`, `Modal.md`)
+  - Includes: overview, working examples, best practices, prop list
+  - Content extracted directly from DMC official docs
+- **Find by name**: Check `references/components/INDEX.md` for alphabetical list
+- **Fallback**: `references/all-components.md` — complete prop reference for all 181 components
 
-### Step 2: Check Allowed Props
-Read the prop list in your component's file. All props must be from that list or the shared props listed below.
+### Step 2: Study the Examples
+Each component file includes real, working code examples from the official DMC documentation. Study these examples to understand how the component works.
 
-### Step 3: Verify Common Mistakes
-Check `references/common-mistakes.md` — is your prop a known mistake? (e.g., `icon=` should be `leftSection=`)
+### Step 3: Check Props
+The component file lists all component-specific props. Combine these with shared props (spacing, sizing, color, etc.) listed below.
 
-### Step 4: Reference Patterns
-See `references/patterns.md` for correct callback syntax for your use case (buttons, selects, forms, etc.)
+### Step 4: Avoid Common Mistakes
+Check `references/common-mistakes.md` before writing code — is your approach a known issue? (e.g., `icon=` should be `leftSection=`)
 
-### Step 5: Implement with Confidence
-Use only props from the authoritative lists. You're now guaranteed to generate valid DMC code.
+### Step 5: Reference Patterns
+See `references/patterns.md` for correct Dash callback patterns for your use case (buttons, selects, forms, modals, etc.)
+
+### Step 6: Implement with Confidence
+You have official documentation, working examples, and complete prop references. You're guaranteed to generate valid, best-practice DMC code.
 
 ---
 

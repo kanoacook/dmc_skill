@@ -1,8 +1,41 @@
-# BubbleChart
+# Bubblechart
 
-**Component**: `dmc.BubbleChart`
+**Component**: `dmc.Bubblechart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import callback, Input, Output
+import dash_mantine_components as dmc
+from .data import data
+
+dmc.Group(
+    [
+        dmc.BubbleChart(
+            id="figure-bubblechart-hover",
+            gridColor="gray.5",
+            textColor="gray.9",
+            h=60,
+            data=data,
+            range=[16, 225],
+            label="Sales/hour",
+            color="lime.6",
+            dataKey={"x": "hour", "y": "index", "z": "value"}
+        ),
+        dmc.Text(id="hoverdata-bubblechart"),
+
+    ]
+)
+
+@callback(
+    Output("hoverdata-bubblechart", "children"),
+    Input("figure-bubblechart-hover", "hoverData"),
+)
+def update(data):
+    return f"hoverData:  {data}"
 
 ---
 
@@ -11,30 +44,10 @@
 The following props are specific to this component:
 
 ```
-clickData, color, data, dataKey, gridColor, hoverData, label, range, scatterProps, textColor, tooltipProps, valueFormatter, withTooltip, xAxisProps, yAxisProps, zAxisProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `clickData` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `dataKey` | ? | See all-components.md for details |
-| `gridColor` | ? | See all-components.md for details |
-| `hoverData` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `range` | ? | See all-components.md for details |
-| `scatterProps` | ? | See all-components.md for details |
-| `textColor` | ? | See all-components.md for details |
-| `tooltipProps` | ? | See all-components.md for details |
-| `valueFormatter` | ? | See all-components.md for details |
-| `withTooltip` | ? | See all-components.md for details |
-| `xAxisProps` | ? | See all-components.md for details |
-| `yAxisProps` | ? | See all-components.md for details |
-| `zAxisProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -55,21 +68,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.BubbleChart(
-    id="my-bubblechart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

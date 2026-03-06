@@ -2,7 +2,37 @@
 
 **Component**: `dmc.Alert`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html, Output, Input, State, callback
+
+html.Div(
+    [
+        dmc.Alert(
+            "Something terrible happened! You made a mistake and there is no going back, your data was lost forever! ",
+            title="Bummer!",
+            id="alert-dismiss",
+            color="red",
+            withCloseButton=True,
+        ),
+        dmc.Button("Toggle alert", id="alert-button", mt=20),
+    ]
+)
+
+
+@callback(
+    Output("alert-dismiss", "hide"),
+    Input("alert-button", "n_clicks"),
+    State("alert-dismiss", "hide"),
+    prevent_initial_call=True,
+)
+def alert(n_clicks, hide):
+    return not hide
 
 ---
 
@@ -14,21 +44,7 @@ The following props are specific to this component:
 autoContrast, children, closeButtonLabel, color, duration, hide, icon, radius, title, withCloseButton
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `closeButtonLabel` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `duration` | ? | See all-components.md for details |
-| `hide` | ? | See all-components.md for details |
-| `icon` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `title` | ? | See all-components.md for details |
-| `withCloseButton` | ? | See all-components.md for details |
-
+**Props count**: 10
 
 ---
 
@@ -49,21 +65,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Alert(
-    id="my-alert",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

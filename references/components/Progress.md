@@ -2,7 +2,54 @@
 
 **Component**: `dmc.Progress`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+
+dmc.Box(
+    [
+        dmc.ProgressRoot(
+            [
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Documents"),
+                    value=33,
+                    color="cyan",
+                    id="progress-section1",
+                ),
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Photos"),
+                    value=28,
+                    color="pink",
+                    id="progress-section2",
+                ),
+                dmc.ProgressSection(
+                    dmc.ProgressLabel("Others"),
+                    value=15,
+                    color="orange",
+                    id="progress-section3",
+                ),
+            ],
+            size="40",
+        ),
+        dmc.Tooltip(
+            target="#progress-section1",
+            label="Documents – 33Gb",
+        ),
+        dmc.Tooltip(
+            target="#progress-section2",
+            label="Photos – 28Gb",
+        ),
+        dmc.Tooltip(
+            target="#progress-section3",
+            label="Other – 15Gb",
+        ),
+    ]
+)
 
 ---
 
@@ -14,20 +61,7 @@ The following props are specific to this component:
 animated, autoContrast, color, orientation, radius, size, striped, transitionDuration, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `animated` | ? | See all-components.md for details |
-| `autoContrast` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `striped` | ? | See all-components.md for details |
-| `transitionDuration` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +82,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Progress(
-    id="my-progress",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -2,7 +2,22 @@
 
 **Component**: `dmc.Rating`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+
+dmc.Stack(
+    [
+        dmc.Group([dmc.Text("Fractions: 2"), dmc.Rating(fractions=2, value=1)]),
+        dmc.Group([dmc.Text("Fractions: 3"), dmc.Rating(fractions=3, value=2.3333)]),
+        dmc.Group([dmc.Text("Fractions: 4"), dmc.Rating(fractions=4, value=3.75)]),
+    ]
+)
 
 ---
 
@@ -14,24 +29,7 @@ The following props are specific to this component:
 color, count, emptySymbol, fractions, fullSymbol, highlightSelectedOnly, name, persisted_props, persistence, persistence_type, readOnly, size, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `color` | ? | See all-components.md for details |
-| `count` | ? | See all-components.md for details |
-| `emptySymbol` | ? | See all-components.md for details |
-| `fractions` | ? | See all-components.md for details |
-| `fullSymbol` | ? | See all-components.md for details |
-| `highlightSelectedOnly` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 13
 
 ---
 
@@ -52,21 +50,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Rating(
-    id="my-rating",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

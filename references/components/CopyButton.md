@@ -1,8 +1,41 @@
-# CopyButton
+# Copybutton
 
-**Component**: `dmc.CopyButton`
+**Component**: `dmc.Copybutton`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Group([
+    dmc.CopyButton(
+        value="https://www.dash-mantine-components.com/",
+        children="Copy URL",
+        copiedChildren="Copied!",
+        color="blue",
+        copiedColor="teal"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="tabler:clipboard"),
+        copiedChildren=DashIconify(icon="tabler:check"),
+        color="blue",
+        copiedColor="teal",
+        variant="outline"
+    ),
+    dmc.CopyButton(
+        value="This text is copied",
+        children=DashIconify(icon="fa-regular:copy"),
+        copiedChildren=DashIconify(icon="fa-regular:check-circle"),
+        color="gray",
+        copiedColor="dark",
+        variant="transparent"
+    )
+])
 
 ---
 
@@ -11,29 +44,10 @@
 The following props are specific to this component:
 
 ```
-autoContrast, children, color, copiedChildren, copiedColor, disabled, fullWidth, gradient, n_clicks, radius, size, target_id, timeout, triggerCopy, value
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `copiedChildren` | ? | See all-components.md for details |
-| `copiedColor` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `fullWidth` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `n_clicks` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `target_id` | ? | See all-components.md for details |
-| `timeout` | ? | See all-components.md for details |
-| `triggerCopy` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -54,21 +68,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.CopyButton(
-    id="my-copybutton",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

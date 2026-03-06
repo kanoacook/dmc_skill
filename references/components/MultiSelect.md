@@ -1,8 +1,50 @@
-# MultiSelect
+# Multiselect
 
-**Component**: `dmc.MultiSelect`
+**Component**: `dmc.Multiselect`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+users_data = {
+    "Emily Johnson": {
+        "image": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-7.png",
+        "email": "emily92@gmail.com",
+    },
+    "Ava Rodriguez": {
+        "image": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-8.png",
+        "email": "ava_rose@gmail.com",
+    },
+    "Olivia Chen": {
+        "image": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-4.png",
+        "email": "livvy_globe@gmail.com",
+    },
+    "Ethan Barnes": {
+        "image": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-1.png",
+        "email": "ethan_explorer@gmail.com",
+    },
+    "Mason Taylor": {
+        "image": "https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-2.png",
+        "email": "mason_musician@gmail.com",
+    },
+}
+
+component = dmc.MultiSelect(
+    data=list(users_data.keys()),
+    label="Employees of the month",
+    placeholder="Search for employee",
+    maxDropdownHeight=300,
+    searchable=True,
+    hidePickedOptions=True,
+    renderOption={
+        "function": "renderUserOption",
+        "options": {"users": users_data},
+    },
+)
 
 ---
 
@@ -11,70 +53,10 @@
 The following props are specific to this component:
 
 ```
-checkIconPosition, clearButtonProps, clearSearchOnChange, clearable, comboboxProps, data, debounce, description, descriptionProps, disabled, dropdownOpened, error, errorProps, filter, hiddenInputProps, hiddenInputValuesDivider, hidePickedOptions, inputProps, inputWrapperOrder, label, labelProps, leftSection, leftSectionPointerEvents, leftSectionProps, leftSectionWidth, limit, maxDropdownHeight, maxValues, n_blur, n_submit, name, nothingFoundMessage, persisted_props, persistence, persistence_type, placeholder, pointer, radius, readOnly, renderOption, required, rightSection, rightSectionPointerEvents, rightSectionProps, rightSectionWidth, scrollAreaProps, searchValue, searchable, selectFirstOptionOnChange, size, value, withAsterisk, withCheckIcon, withErrorStyles, withScrollArea, wrapperProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `checkIconPosition` | ? | See all-components.md for details |
-| `clearButtonProps` | ? | See all-components.md for details |
-| `clearSearchOnChange` | ? | See all-components.md for details |
-| `clearable` | ? | See all-components.md for details |
-| `comboboxProps` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `debounce` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `descriptionProps` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `dropdownOpened` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `errorProps` | ? | See all-components.md for details |
-| `filter` | ? | See all-components.md for details |
-| `hiddenInputProps` | ? | See all-components.md for details |
-| `hiddenInputValuesDivider` | ? | See all-components.md for details |
-| `hidePickedOptions` | ? | See all-components.md for details |
-| `inputProps` | ? | See all-components.md for details |
-| `inputWrapperOrder` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelProps` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `leftSectionPointerEvents` | ? | See all-components.md for details |
-| `leftSectionProps` | ? | See all-components.md for details |
-| `leftSectionWidth` | ? | See all-components.md for details |
-| `limit` | ? | See all-components.md for details |
-| `maxDropdownHeight` | ? | See all-components.md for details |
-| `maxValues` | ? | See all-components.md for details |
-| `n_blur` | ? | See all-components.md for details |
-| `n_submit` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `nothingFoundMessage` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `placeholder` | ? | See all-components.md for details |
-| `pointer` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `renderOption` | ? | See all-components.md for details |
-| `required` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `rightSectionPointerEvents` | ? | See all-components.md for details |
-| `rightSectionProps` | ? | See all-components.md for details |
-| `rightSectionWidth` | ? | See all-components.md for details |
-| `scrollAreaProps` | ? | See all-components.md for details |
-| `searchValue` | ? | See all-components.md for details |
-| `searchable` | ? | See all-components.md for details |
-| `selectFirstOptionOnChange` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withAsterisk` | ? | See all-components.md for details |
-| `withCheckIcon` | ? | See all-components.md for details |
-| `withErrorStyles` | ? | See all-components.md for details |
-| `withScrollArea` | ? | See all-components.md for details |
-| `wrapperProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -95,21 +77,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.MultiSelect(
-    id="my-multiselect",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

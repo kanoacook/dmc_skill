@@ -2,7 +2,42 @@
 
 **Component**: `dmc.Slider`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+marks = [
+    {"value": 0, "label": "xs"},
+    {"value": 25, "label": "sm"},
+    {"value": 50, "label": "md"},
+    {"value": 75, "label": "lg"},
+    {"value": 100, "label": "xl"},
+]
+
+component = dmc.Container([
+    dmc.Text("Decimal step"),
+    dmc.Slider(
+        value=0,
+        min=-10,
+        max=10,
+        step=0.1,
+        label={"function": "formatDecimal"},
+        styles={"markLabel": {"display": "none"}},
+    ),
+
+    dmc.Text("Step matched with marks", mt="md"),
+    dmc.Slider(
+        value=50,
+        step=25,
+        marks=marks,
+        label={"function": "labelFromMarks", "options": {"marks": marks}},
+        styles={"markLabel": {"display": "none"}},
+    ),
+], p="xl")
 
 ---
 
@@ -14,37 +49,7 @@ The following props are specific to this component:
 color, disabled, domain, inverted, label, labelAlwaysOn, labelTransitionProps, marks, max, min, name, persisted_props, persistence, persistence_type, precision, radius, restrictToMarks, scale, showLabelOnHover, size, step, thumbChildren, thumbLabel, thumbSize, updatemode, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `domain` | ? | See all-components.md for details |
-| `inverted` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelAlwaysOn` | ? | See all-components.md for details |
-| `labelTransitionProps` | ? | See all-components.md for details |
-| `marks` | ? | See all-components.md for details |
-| `max` | ? | See all-components.md for details |
-| `min` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `precision` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `restrictToMarks` | ? | See all-components.md for details |
-| `scale` | ? | See all-components.md for details |
-| `showLabelOnHover` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `step` | ? | See all-components.md for details |
-| `thumbChildren` | ? | See all-components.md for details |
-| `thumbLabel` | ? | See all-components.md for details |
-| `thumbSize` | ? | See all-components.md for details |
-| `updatemode` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 26
 
 ---
 
@@ -65,21 +70,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Slider(
-    id="my-slider",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

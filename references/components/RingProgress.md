@@ -1,8 +1,46 @@
-# RingProgress
+# Ringprogress
 
-**Component**: `dmc.RingProgress`
+**Component**: `dmc.Ringprogress`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Group(
+    [
+        dmc.RingProgress(
+            id="ring-progress-label",
+            sections=[{"value": 33, "color": "indigo"}],
+            label=dmc.Text("33%", c="indigo", ta="center"),
+        ),
+        dmc.RingProgress(
+            id="ring-progress-label2",
+            sections=[
+                {"value": 25, "color": "indigo"},
+                {"value": 15, "color": "orange"},
+            ],
+            label=dmc.Text("App data usage", size="xs", ta="center"),
+        ),
+        dmc.RingProgress(
+            id="ring-progress-label3",
+            sections=[{"value": 60, "color": "green"}, {"value": 5, "color": "yellow"}],
+            label=dmc.Center(
+                dmc.ActionIcon(
+                    color="teal",
+                    variant="light",
+                    radius="xl",
+                    size="xl",
+                    children=DashIconify(icon="tabler:check", height=40),
+                )
+            ),
+        ),
+    ]
+)
 
 ---
 
@@ -11,20 +49,10 @@
 The following props are specific to this component:
 
 ```
-label, rootColor, roundCaps, sections, size, thickness
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `label` | ? | See all-components.md for details |
-| `rootColor` | ? | See all-components.md for details |
-| `roundCaps` | ? | See all-components.md for details |
-| `sections` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `thickness` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -45,21 +73,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.RingProgress(
-    id="my-ringprogress",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

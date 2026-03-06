@@ -1,8 +1,31 @@
-# SemiCircleProgress
+# Semicircleprogress
 
-**Component**: `dmc.SemiCircleProgress`
+**Component**: `dmc.Semicircleprogress`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import random
+import dash_mantine_components as dmc
+from dash import Input, Output, callback
+
+dmc.Box([
+    dmc.SemiCircleProgress(value=30, transitionDuration=250, label="30%", id="semi-circle-progress"),
+    dmc.Button("Set random value", mt="md", ml=22, id="semi-circle-progress-btn"),
+
+])
+
+@callback(
+    Output("semi-circle-progress", "value"),
+    Output("semi-circle-progress", "label"),
+    Input("semi-circle-progress-btn", "n_clicks")
+)
+def update(n):
+    number = random.randint(1, 100)
+    return number, f"{number}%"
 
 ---
 
@@ -11,24 +34,10 @@
 The following props are specific to this component:
 
 ```
-emptySegmentColor, fillDirection, filledSegmentColor, label, labelPosition, orientation, size, thickness, transitionDuration, value
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `emptySegmentColor` | ? | See all-components.md for details |
-| `fillDirection` | ? | See all-components.md for details |
-| `filledSegmentColor` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelPosition` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `thickness` | ? | See all-components.md for details |
-| `transitionDuration` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -49,21 +58,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.SemiCircleProgress(
-    id="my-semicircleprogress",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

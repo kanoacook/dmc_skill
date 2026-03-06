@@ -2,7 +2,32 @@
 
 **Component**: `dmc.Tooltip`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Center(
+    [
+        dmc.FloatingTooltip(
+            label="Tooltip",
+            color="orange",
+            children=[
+                dmc.Center(
+                    dmc.Text("Hover over the box to see tooltip"),
+                    style={
+                        "height": 100,
+                        "padding": 10,
+                        "border": "2px solid  var(--mantine-color-gray-6)",
+                    },
+                )
+            ],
+        )
+    ]
+)
 
 ---
 
@@ -14,40 +39,7 @@ The following props are specific to this component:
 arrowOffset, arrowPosition, arrowRadius, arrowSize, autoContrast, boxWrapperProps, children, closeDelay, color, disabled, events, floatingStrategy, inline, keepMounted, label, middlewares, multiline, offset, openDelay, opened, portalProps, position, positionDependencies, radius, target, transitionProps, withArrow, withinPortal, zIndex
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `arrowOffset` | ? | See all-components.md for details |
-| `arrowPosition` | ? | See all-components.md for details |
-| `arrowRadius` | ? | See all-components.md for details |
-| `arrowSize` | ? | See all-components.md for details |
-| `autoContrast` | ? | See all-components.md for details |
-| `boxWrapperProps` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `closeDelay` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `events` | ? | See all-components.md for details |
-| `floatingStrategy` | ? | See all-components.md for details |
-| `inline` | ? | See all-components.md for details |
-| `keepMounted` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `middlewares` | ? | See all-components.md for details |
-| `multiline` | ? | See all-components.md for details |
-| `offset` | ? | See all-components.md for details |
-| `openDelay` | ? | See all-components.md for details |
-| `opened` | ? | See all-components.md for details |
-| `portalProps` | ? | See all-components.md for details |
-| `position` | ? | See all-components.md for details |
-| `positionDependencies` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `target` | ? | See all-components.md for details |
-| `transitionProps` | ? | See all-components.md for details |
-| `withArrow` | ? | See all-components.md for details |
-| `withinPortal` | ? | See all-components.md for details |
-| `zIndex` | ? | See all-components.md for details |
-
+**Props count**: 29
 
 ---
 
@@ -68,21 +60,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Tooltip(
-    id="my-tooltip",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

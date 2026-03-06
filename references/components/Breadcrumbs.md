@@ -2,7 +2,39 @@
 
 **Component**: `dmc.Breadcrumbs`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import dcc, html
+
+html.Div(
+    [
+        # default separator
+        dmc.Breadcrumbs(
+            children=[
+                dcc.Link("Home", href="/"),
+                dcc.Link("Dash Mantine Components", href="/"),
+                dcc.Link("Breadcrumbs", href="/components/breadcrumbs"),
+            ],
+        ),
+        dmc.Space(h=20),
+        # separator provided
+        dmc.Breadcrumbs(
+            separator="→",
+            children=[
+                dmc.Anchor("Home", href="/", underline=False),
+                dmc.Anchor("Dash Mantine Components", href="/", underline=False),
+                dmc.Anchor(
+                    "Breadcrumbs", href="/components/breadcrumbs", underline=False
+                ),
+            ],
+        ),
+    ]
+)
 
 ---
 
@@ -14,14 +46,7 @@ The following props are specific to this component:
 children, separator, separatorMargin
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `separator` | ? | See all-components.md for details |
-| `separatorMargin` | ? | See all-components.md for details |
-
+**Props count**: 3
 
 ---
 
@@ -42,21 +67,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Breadcrumbs(
-    id="my-breadcrumbs",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -1,8 +1,48 @@
-# ColorPicker
+# Colorpicker
 
-**Component**: `dmc.ColorPicker`
+**Component**: `dmc.Colorpicker`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html, Input, Output, callback
+
+html.Div(
+    [
+        dmc.Group(
+            justify="space-between",
+            children=[
+                dmc.ColorPicker(id="colorpicker-format", format="hex", value="#343353"),
+                dmc.Select(
+                    id="format-select",
+                    data=[
+                        {"label": fmt.upper(), "value": fmt}
+                        for fmt in ["hex", "hexa", "rgb", "rgba", "hsl", "hsla"]
+                    ],
+                    value="hex",
+                ),
+            ],
+        ),
+        dmc.Space(h=10),
+        dmc.Text(id="selected-color-format"),
+    ]
+)
+
+
+@callback(Output("colorpicker-format", "format"), Input("format-select", "value"))
+def pick_format(value):
+    return value
+
+
+@callback(
+    Output("selected-color-format", "children"), Input("colorpicker-format", "value")
+)
+def pick_color(color):
+    return color
 
 ---
 
@@ -11,28 +51,10 @@
 The following props are specific to this component:
 
 ```
-alphaLabel, focusable, format, fullWidth, hueLabel, persisted_props, persistence, persistence_type, saturationLabel, size, swatches, swatchesPerRow, value, withPicker
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `alphaLabel` | ? | See all-components.md for details |
-| `focusable` | ? | See all-components.md for details |
-| `format` | ? | See all-components.md for details |
-| `fullWidth` | ? | See all-components.md for details |
-| `hueLabel` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `saturationLabel` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `swatches` | ? | See all-components.md for details |
-| `swatchesPerRow` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withPicker` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -53,21 +75,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.ColorPicker(
-    id="my-colorpicker",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

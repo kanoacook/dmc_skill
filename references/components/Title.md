@@ -2,7 +2,25 @@
 
 **Component**: `dmc.Title`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+html.Div(
+    [
+        dmc.Title(f"This is h1 title", order=1),
+        dmc.Title(f"This is h2 title", order=2),
+        dmc.Title(f"This is h3 title", order=3),
+        dmc.Title(f"This is h4 title", order=4),
+        dmc.Title(f"This is h5 title", order=5),
+        dmc.Title(f"This is h6 title", order=6),
+    ]
+)
 
 ---
 
@@ -14,16 +32,7 @@ The following props are specific to this component:
 children, lineClamp, order, size, textWrap
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `lineClamp` | ? | See all-components.md for details |
-| `order` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `textWrap` | ? | See all-components.md for details |
-
+**Props count**: 5
 
 ---
 
@@ -44,21 +53,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Title(
-    id="my-title",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

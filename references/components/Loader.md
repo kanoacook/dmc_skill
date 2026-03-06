@@ -2,7 +2,31 @@
 
 **Component**: `dmc.Loader`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import time
+
+import dash_mantine_components as dmc
+from dash import html, Input, Output, callback
+
+html.Div([
+    dmc.Button("Compute", id="load-btn", loaderProps={"type": "dots"} ),
+    dmc.Text(id="load-output"),
+])
+
+
+@callback(
+    Output("load-output", "children"),
+    Input("load-btn", "n_clicks"),
+    running=[(Output("load-btn", "loading"), True, False)],
+)
+def long_compute(n):
+    time.sleep(2)
+    return "Done " + str(time.time())
 
 ---
 
@@ -14,15 +38,7 @@ The following props are specific to this component:
 children, color, size, type
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-
+**Props count**: 4
 
 ---
 
@@ -43,21 +59,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Loader(
-    id="my-loader",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

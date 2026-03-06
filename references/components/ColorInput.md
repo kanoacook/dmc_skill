@@ -1,8 +1,33 @@
-# ColorInput
+# Colorinput
 
-**Component**: `dmc.ColorInput`
+**Component**: `dmc.Colorinput`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Stack(
+    [
+        dmc.ColorInput(
+            label="Without preview",
+            withPreview=False,
+            value="#40c057",
+            w=250,
+        ),
+        dmc.ColorInput(
+            label="With icon",
+            leftSection=DashIconify(icon="cil:paint"),
+            withPreview=False,
+            w=250,
+            value="#40c057",
+        ),
+    ]
+)
 
 ---
 
@@ -11,57 +36,10 @@
 The following props are specific to this component:
 
 ```
-closeOnColorSwatchClick, description, descriptionProps, disabled, disallowInput, error, errorProps, eyeDropperButtonProps, eyeDropperIcon, fixOnBlur, format, inputProps, inputWrapperOrder, label, labelProps, leftSection, leftSectionPointerEvents, leftSectionProps, leftSectionWidth, name, persisted_props, persistence, persistence_type, placeholder, pointer, popoverProps, radius, readOnly, required, rightSection, rightSectionPointerEvents, rightSectionProps, rightSectionWidth, size, swatches, swatchesPerRow, value, withAsterisk, withErrorStyles, withEyeDropper, withPicker, withPreview, wrapperProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `closeOnColorSwatchClick` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `descriptionProps` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `disallowInput` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `errorProps` | ? | See all-components.md for details |
-| `eyeDropperButtonProps` | ? | See all-components.md for details |
-| `eyeDropperIcon` | ? | See all-components.md for details |
-| `fixOnBlur` | ? | See all-components.md for details |
-| `format` | ? | See all-components.md for details |
-| `inputProps` | ? | See all-components.md for details |
-| `inputWrapperOrder` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelProps` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `leftSectionPointerEvents` | ? | See all-components.md for details |
-| `leftSectionProps` | ? | See all-components.md for details |
-| `leftSectionWidth` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `placeholder` | ? | See all-components.md for details |
-| `pointer` | ? | See all-components.md for details |
-| `popoverProps` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `required` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `rightSectionPointerEvents` | ? | See all-components.md for details |
-| `rightSectionProps` | ? | See all-components.md for details |
-| `rightSectionWidth` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `swatches` | ? | See all-components.md for details |
-| `swatchesPerRow` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withAsterisk` | ? | See all-components.md for details |
-| `withErrorStyles` | ? | See all-components.md for details |
-| `withEyeDropper` | ? | See all-components.md for details |
-| `withPicker` | ? | See all-components.md for details |
-| `withPreview` | ? | See all-components.md for details |
-| `wrapperProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -82,21 +60,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.ColorInput(
-    id="my-colorinput",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

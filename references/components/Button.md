@@ -2,7 +2,55 @@
 
 **Component**: `dmc.Button`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+from dash import html
+
+icon = DashIconify(icon="tabler:photo", width=14)
+
+component = dmc.Stack(
+    [
+        dmc.Button(
+            "Button label",
+            justify="center",
+            fullWidth=True,
+            leftSection=icon,
+            rightSection=icon,
+            variant="default",
+        ),
+        dmc.Button(
+            "Button label",
+            justify="center",
+            fullWidth=True,
+            leftSection=icon,
+            variant="default",
+            mt="md",
+        ),
+        dmc.Button(
+            "Button label",
+            justify="center",
+            fullWidth=True,
+            rightSection=icon,
+            variant="default",
+            mt="md",
+        ),
+        dmc.Button(
+            "Button label",
+            justify="center",
+            fullWidth=True,
+            leftSection=html.Span(),  # Empty spacer
+            rightSection=icon,
+            variant="default",
+            mt="md",
+        ),
+    ]
+)
 
 ---
 
@@ -14,25 +62,7 @@ The following props are specific to this component:
 autoContrast, children, color, disabled, fullWidth, gradient, justify, leftSection, loaderProps, loading, n_clicks, radius, rightSection, size
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `fullWidth` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `justify` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `loaderProps` | ? | See all-components.md for details |
-| `loading` | ? | See all-components.md for details |
-| `n_clicks` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-
+**Props count**: 14
 
 ---
 
@@ -53,21 +83,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Button(
-    id="my-button",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

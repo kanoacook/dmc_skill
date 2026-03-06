@@ -2,7 +2,21 @@
 
 **Component**: `dmc.Blockquote`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+
+dmc.Blockquote(
+    "Doth mother know you weareth her drapes?",
+    cite="- Ironman",
+    icon=DashIconify(icon="codicon:flame", width=30),
+    color="red",
+)
 
 ---
 
@@ -14,17 +28,7 @@ The following props are specific to this component:
 children, cite, color, icon, iconSize, radius
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `cite` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `icon` | ? | See all-components.md for details |
-| `iconSize` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-
+**Props count**: 6
 
 ---
 
@@ -45,21 +49,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Blockquote(
-    id="my-blockquote",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

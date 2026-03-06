@@ -2,7 +2,37 @@
 
 **Component**: `dmc.Pagination`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import  html, Output, Input, callback
+import dash_mantine_components as dmc
+
+
+limit = 10
+total = 145
+total_pages = (total + limit - 1) // limit
+
+dmc.Group(
+    justify="flex-end",
+    children=[
+        dmc.Text(id="message-withPages", size="sm"),
+        dmc.Pagination(id="pagination-withPages", total=total_pages, value=1, withPages=False),
+    ],
+)
+
+
+@callback(
+    Output("message-withPages", "children"),
+    Input("pagination-withPages", "value"),
+)
+def update_message(page):
+    start = limit * (page - 1) + 1
+    end = min(total, limit * page)
+    return f"Showing {start} – {end} of {total}"
 
 ---
 
@@ -14,28 +44,7 @@ The following props are specific to this component:
 autoContrast, boundaries, color, disabled, gap, hideWithOnePage, persisted_props, persistence, persistence_type, radius, siblings, size, total, value, withControls, withEdges, withPages
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `boundaries` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `gap` | ? | See all-components.md for details |
-| `hideWithOnePage` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `siblings` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `total` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withControls` | ? | See all-components.md for details |
-| `withEdges` | ? | See all-components.md for details |
-| `withPages` | ? | See all-components.md for details |
-
+**Props count**: 17
 
 ---
 
@@ -56,21 +65,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Pagination(
-    id="my-pagination",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

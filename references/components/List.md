@@ -2,7 +2,48 @@
 
 **Component**: `dmc.List`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.List(
+    [
+        dmc.ListItem("First order item"),
+        dmc.ListItem("First order item"),
+        dmc.ListItem(
+            [
+                "First order item with list",
+                dmc.List(
+                    withPadding=True,
+                    listStyleType="disc",
+                    children=[
+                        dmc.ListItem("Nested Item"),
+                        dmc.ListItem("Nested Item"),
+                        dmc.ListItem(
+                            [
+                                "Nested item with list",
+                                dmc.List(
+                                    withPadding=True,
+                                    listStyleType="disc",
+                                    children=[
+                                        dmc.ListItem("Even more nested"),
+                                        dmc.ListItem("Even more nested"),
+                                    ],
+                                ),
+                            ]
+                        ),
+                        dmc.ListItem("Nested Item"),
+                    ],
+                ),
+            ]
+        ),
+        dmc.ListItem("First order item"),
+    ]
+)
 
 ---
 
@@ -14,19 +55,7 @@ The following props are specific to this component:
 center, children, icon, listStyleType, size, spacing, type, withPadding
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `center` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `icon` | ? | See all-components.md for details |
-| `listStyleType` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `spacing` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-| `withPadding` | ? | See all-components.md for details |
-
+**Props count**: 8
 
 ---
 
@@ -47,21 +76,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.List(
-    id="my-list",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

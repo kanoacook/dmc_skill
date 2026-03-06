@@ -2,7 +2,54 @@
 
 **Component**: `dmc.Collapse`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import callback, Input, Output
+import dash_mantine_components as dmc
+
+dmc.Box([
+    dmc.Button("Toggle Content", id="collapse-root-btn", n_clicks=0, mb="sm", size="lg"),
+    dmc.Collapse(
+        children=dmc.Box([
+            dmc.Text("Hello World!", mt="lg"),
+            dmc.Button(
+                "Toggle Content",
+                id="collapse-inner-btn",
+                n_clicks=0,
+                variant="outline",
+                size="sm",
+                my="lg",
+                ml="lg"
+            ),
+            dmc.Collapse(children= dmc.Text("Hello Nested Worlds!", ml="lg"), id="collapse-inner")
+        ]),
+        opened=False,
+        id="collapse-root"
+    )
+])
+
+@callback(
+    Output("collapse-root", "opened"),
+    Input("collapse-root-btn", "n_clicks"),
+)
+def update(n):
+    if n % 2 == 0:
+        return False
+    return True
+
+
+@callback(
+    Output("collapse-inner", "opened"),
+    Input("collapse-inner-btn", "n_clicks"),
+)
+def update(n):
+    if n % 2 == 0:
+        return False
+    return True
 
 ---
 
@@ -14,17 +61,7 @@ The following props are specific to this component:
 animateOpacity, children, keepMounted, opened, transitionDuration, transitionTimingFunction
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `animateOpacity` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `keepMounted` | ? | See all-components.md for details |
-| `opened` | ? | See all-components.md for details |
-| `transitionDuration` | ? | See all-components.md for details |
-| `transitionTimingFunction` | ? | See all-components.md for details |
-
+**Props count**: 6
 
 ---
 
@@ -45,21 +82,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Collapse(
-    id="my-collapse",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

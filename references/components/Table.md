@@ -2,7 +2,53 @@
 
 **Component**: `dmc.Table`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Table(
+    withTableBorder=True,
+    withColumnBorders=True,
+
+    children=[
+        dmc.TableThead(
+            dmc.TableTr([
+                dmc.TableTh("Day"),
+                dmc.TableTh("Time"),
+                dmc.TableTh("Topic"),
+                dmc.TableTh("Action"),
+            ])
+        ),
+        dmc.TableTbody([
+            dmc.TableTr([
+                dmc.TableTd("Monday", tableProps={"rowSpan": 2}),
+                dmc.TableTd("9:00 - 10:00"),
+                dmc.TableTd("Building Interactive Dashboards with Dash"),
+                dmc.TableTd(dmc.Button("Details", size="xs", variant="light")),
+            ]),
+            dmc.TableTr([
+                dmc.TableTd("10:15 - 11:00"),
+                dmc.TableTd("Advanced Callbacks and App Structure"),
+                dmc.TableTd(dmc.Button("Details", size="xs", variant="light")),
+            ]),
+            dmc.TableTr([
+                dmc.TableTd("Tuesday", tableProps={"rowSpan": 2}),
+                dmc.TableTd("9:00 - 10:00"),
+                dmc.TableTd("Data Visualization with Plotly Express"),
+                dmc.TableTd(dmc.Button("Details", size="xs", variant="light")),
+            ]),
+            dmc.TableTr([
+                dmc.TableTd("10:15 - 11:00"),
+                dmc.TableTd("Deploying Dash Apps to the Web"),
+                dmc.TableTd(dmc.Button("Details", size="xs", variant="light")),
+            ]),
+        ])
+    ]
+)
 
 ---
 
@@ -14,28 +60,7 @@ The following props are specific to this component:
 borderColor, captionSide, children, data, highlightOnHover, highlightOnHoverColor, horizontalSpacing, layout, stickyHeader, stickyHeaderOffset, striped, stripedColor, tabularNums, verticalSpacing, withColumnBorders, withRowBorders, withTableBorder
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `borderColor` | ? | See all-components.md for details |
-| `captionSide` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `highlightOnHover` | ? | See all-components.md for details |
-| `highlightOnHoverColor` | ? | See all-components.md for details |
-| `horizontalSpacing` | ? | See all-components.md for details |
-| `layout` | ? | See all-components.md for details |
-| `stickyHeader` | ? | See all-components.md for details |
-| `stickyHeaderOffset` | ? | See all-components.md for details |
-| `striped` | ? | See all-components.md for details |
-| `stripedColor` | ? | See all-components.md for details |
-| `tabularNums` | ? | See all-components.md for details |
-| `verticalSpacing` | ? | See all-components.md for details |
-| `withColumnBorders` | ? | See all-components.md for details |
-| `withRowBorders` | ? | See all-components.md for details |
-| `withTableBorder` | ? | See all-components.md for details |
-
+**Props count**: 17
 
 ---
 
@@ -56,21 +81,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Table(
-    id="my-table",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

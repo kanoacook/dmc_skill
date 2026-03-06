@@ -1,8 +1,49 @@
-# InputWrapper
+# Inputwrapper
 
-**Component**: `dmc.InputWrapper`
+**Component**: `dmc.Inputwrapper`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+from dash import Input, Output, callback
+
+
+ dmc.InputWrapper(
+    id="tree-wrapper",
+    label="Tree input",
+    description="This is a tree input",
+    inputWrapperOrder=["label", "description", "error", "input"],
+    withAsterisk=True,
+    children=[
+        dmc.Tree(
+            id="tree",
+            checkboxes=True,
+            data=[
+                {
+                    "label": "root",
+                    "value": "value",
+                    "children": [
+                        {"label": "child 1", "value": "child_1"},
+                        {"label": "child 2", "value": "child_2"},
+                    ],
+                }
+            ],
+        )
+    ],
+)
+
+@callback(
+    Output("tree-wrapper", "error"),
+    Input("tree", "checked"),
+)
+def validate(checked):
+    tree_error = "Select at least one" if not checked else None
+    return tree_error
 
 ---
 
@@ -11,27 +52,10 @@
 The following props are specific to this component:
 
 ```
-children, description, descriptionProps, error, errorProps, htmlFor, inputWrapperOrder, label, labelElement, labelProps, required, size, withAsterisk
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `descriptionProps` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `errorProps` | ? | See all-components.md for details |
-| `htmlFor` | ? | See all-components.md for details |
-| `inputWrapperOrder` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelElement` | ? | See all-components.md for details |
-| `labelProps` | ? | See all-components.md for details |
-| `required` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `withAsterisk` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -52,21 +76,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.InputWrapper(
-    id="my-inputwrapper",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

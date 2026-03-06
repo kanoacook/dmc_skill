@@ -1,8 +1,53 @@
-# ActionIcon
+# Actionicon
 
-**Component**: `dmc.ActionIcon`
+**Component**: `dmc.Actionicon`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash_iconify import DashIconify
+from dash import callback, Input, Output
+
+dmc.Box([
+    dmc.Group(
+        [
+            dmc.ActionIcon(
+                id="icon-loading-default",
+                children=DashIconify(icon="tabler:heart", width=18, height=18)
+            ),
+            dmc.ActionIcon(
+                id="icon-loading-light",
+                children=DashIconify(icon="tabler:heart", width=18, height=18),
+                variant="light",
+            ),
+            dmc.ActionIcon(
+                id="icon-loading-outline",
+                children=DashIconify(icon="tabler:heart", width=18, height=18),
+                variant="outline",
+            ),
+        ]
+    ),
+    dmc.Switch(
+        id="loading-switch",
+        label="Loading state",
+        checked=False,
+        mt="md",
+    ),
+])
+
+
+@callback(
+    Output("icon-loading-default", "loading"),
+    Output("icon-loading-light", "loading"),
+    Output("icon-loading-outline", "loading"),
+    Input("loading-switch", "checked"),
+)
+def toggle_loading(loading_state):
+    return loading_state, loading_state, loading_state
 
 ---
 
@@ -11,24 +56,10 @@
 The following props are specific to this component:
 
 ```
-autoContrast, children, color, disabled, gradient, loaderProps, loading, n_clicks, radius, size
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `loaderProps` | ? | See all-components.md for details |
-| `loading` | ? | See all-components.md for details |
-| `n_clicks` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -49,21 +80,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.ActionIcon(
-    id="my-actionicon",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

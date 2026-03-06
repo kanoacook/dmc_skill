@@ -1,8 +1,48 @@
-# RadarChart
+# Radarchart
 
-**Component**: `dmc.RadarChart`
+**Component**: `dmc.Radarchart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from random import randint
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+dmc.Box(
+    [
+        dmc.Button("Update Chart", id="btn-radarchart-animation"),
+        dmc.RadarChart(
+            id="radarchart-animation",
+            h=300,
+            data=[{}],
+            dataKey="product",
+            withPolarRadiusAxis=True,
+            radarProps={
+                "isAnimationActive": True,
+            },
+            series=[{"name": "sales", "color": "blue.4", "opacity": 0.2}],
+        ),
+    ]
+)
+
+
+@callback(
+    Output("radarchart-animation", "data"),
+    Input("btn-radarchart-animation", "n_clicks"),
+)
+def update(n):
+    return [
+        {"product": "Apples", "sales": randint(20, 100)},
+        {"product": "Oranges", "sales": randint(20, 100)},
+        {"product": "Tomatoes", "sales": randint(20, 100)},
+        {"product": "Grapes", "sales": randint(20, 100)},
+        {"product": "Bananas", "sales": randint(20, 100)},
+        {"product": "Lemons", "sales": randint(20, 100)},
+    ]
 
 ---
 
@@ -11,31 +51,10 @@
 The following props are specific to this component:
 
 ```
-children, clickData, data, dataKey, gridColor, legendProps, polarAngleAxisProps, polarGridProps, polarRadiusAxisProps, radarChartProps, radarProps, series, textColor, withLegend, withPolarAngleAxis, withPolarGrid, withPolarRadiusAxis
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `clickData` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `dataKey` | ? | See all-components.md for details |
-| `gridColor` | ? | See all-components.md for details |
-| `legendProps` | ? | See all-components.md for details |
-| `polarAngleAxisProps` | ? | See all-components.md for details |
-| `polarGridProps` | ? | See all-components.md for details |
-| `polarRadiusAxisProps` | ? | See all-components.md for details |
-| `radarChartProps` | ? | See all-components.md for details |
-| `radarProps` | ? | See all-components.md for details |
-| `series` | ? | See all-components.md for details |
-| `textColor` | ? | See all-components.md for details |
-| `withLegend` | ? | See all-components.md for details |
-| `withPolarAngleAxis` | ? | See all-components.md for details |
-| `withPolarGrid` | ? | See all-components.md for details |
-| `withPolarRadiusAxis` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -56,21 +75,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.RadarChart(
-    id="my-radarchart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

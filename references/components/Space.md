@@ -2,7 +2,24 @@
 
 **Component**: `dmc.Space`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+html.Div(
+    [
+        dmc.Group([dmc.Badge("Badge 1"), dmc.Badge("Badge 2")]),
+        dmc.Space(h="xl"),
+        dmc.Group([dmc.Badge("Badge 1"), dmc.Space(w="lg"), dmc.Badge("Badge 2")]),
+        dmc.Space(h=30),
+        dmc.Group([dmc.Badge("Badge 1"), dmc.Space(w=45), dmc.Badge("Badge 2")]),
+    ]
+)
 
 ---
 
@@ -14,12 +31,7 @@ The following props are specific to this component:
 children
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-
+**Props count**: 1
 
 ---
 
@@ -40,21 +52,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Space(
-    id="my-space",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

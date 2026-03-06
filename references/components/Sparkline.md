@@ -2,7 +2,41 @@
 
 **Component**: `dmc.Sparkline`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+positive_trend = [10, 20, 40, 20, 40, 10, 50]
+negative_trend = [50, 40, 20, 40, 20, 40, 10]
+neutral_trend = [10, 20, 40, 20, 40, 10, 50, 5, 10]
+
+
+def make_sparkline(trend):
+    return dmc.Sparkline(
+        w=200,
+        h=60,
+        data=trend,
+        trendColors={"positive": "teal.6", "negative": "red.6", "neutral": "gray.5"},
+        fillOpacity=0.2,
+    )
+
+
+dmc.Stack(
+    [
+        dmc.Text("Positive Trend"),
+        make_sparkline(positive_trend),
+        dmc.Text("Negative Trend", mt="md"),
+        make_sparkline(negative_trend),
+        dmc.Text("Neutral Trend", mt="md"),
+        make_sparkline(neutral_trend),
+    ],
+    gap="md",
+)
 
 ---
 
@@ -14,20 +48,7 @@ The following props are specific to this component:
 areaProps, color, connectNulls, curveType, data, fillOpacity, strokeWidth, trendColors, withGradient
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `areaProps` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `connectNulls` | ? | See all-components.md for details |
-| `curveType` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `fillOpacity` | ? | See all-components.md for details |
-| `strokeWidth` | ? | See all-components.md for details |
-| `trendColors` | ? | See all-components.md for details |
-| `withGradient` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +69,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Sparkline(
-    id="my-sparkline",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

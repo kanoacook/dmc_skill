@@ -1,8 +1,67 @@
-# RichTextEditor
+# Richtexteditor
 
-**Component**: `dmc.RichTextEditor`
+**Component**: `dmc.Richtexteditor`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+default_labels = {
+    # Controls labels
+    "linkControlLabel": "Link",
+    "colorPickerControlLabel": "Text color",
+    "highlightControlLabel": "Highlight text",
+    "colorControlLabel": "Set text color {color}",  # Use f-string format to include color in label
+    "boldControlLabel": "Bold",
+    "italicControlLabel": "Italic",
+    "underlineControlLabel": "Underline",
+    "strikeControlLabel": "Strikethrough",
+    "clearFormattingControlLabel": "Clear formatting",
+    "unlinkControlLabel": "Remove link",
+    "bulletListControlLabel": "Bullet list",
+    "orderedListControlLabel": "Ordered list",
+    "h1ControlLabel": "Heading 1",
+    "h2ControlLabel": "Heading 2",
+    "h3ControlLabel": "Heading 3",
+    "h4ControlLabel": "Heading 4",
+    "h5ControlLabel": "Heading 5",
+    "h6ControlLabel": "Heading 6",
+    "blockquoteControlLabel": "Blockquote",
+    "alignLeftControlLabel": "Align text: left",
+    "alignCenterControlLabel": "Align text: center",
+    "alignRightControlLabel": "Align text: right",
+    "alignJustifyControlLabel": "Align text: justify",
+    "codeControlLabel": "Code",
+    "codeBlockControlLabel": "Code block",
+    "subscriptControlLabel": "Subscript",
+    "superscriptControlLabel": "Superscript",
+    "unsetColorControlLabel": "Unset color",
+    "hrControlLabel": "Horizontal line",
+    "undoControlLabel": "Undo",
+    "redoControlLabel": "Redo",
+
+    # Task list
+    "tasksControlLabel": "Task list",
+    "tasksSinkLabel": "Decrease task level",
+    "tasksLiftLabel": "Increase task level",
+
+    # Link editor
+    "linkEditorInputLabel": "Enter URL",
+    "linkEditorInputPlaceholder": "https://example.com/",
+    "linkEditorExternalLink": "Open link in a new tab",
+    "linkEditorInternalLink": "Open link in the same tab",
+    "linkEditorSave": "Save",
+
+    # Color picker control
+    "colorPickerCancel": "Cancel",
+    "colorPickerClear": "Clear color",
+    "colorPickerColorPicker": "Color picker",
+    "colorPickerPalette": "Color palette",
+    "colorPickerSave": "Save",
+    "colorPickerColorLabel": "Set Text color {color}",  # Use f-string format to include color in color swatch label
+}
 
 ---
 
@@ -11,29 +70,10 @@
 The following props are specific to this component:
 
 ```
-debounce, editable, extensions, focus, html, json, labels, n_blur, persisted_props, persistence, persistence_type, selected, toolbar, withCodeHighlightStyles, withTypographyStyles
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `debounce` | ? | See all-components.md for details |
-| `editable` | ? | See all-components.md for details |
-| `extensions` | ? | See all-components.md for details |
-| `focus` | ? | See all-components.md for details |
-| `html` | ? | See all-components.md for details |
-| `json` | ? | See all-components.md for details |
-| `labels` | ? | See all-components.md for details |
-| `n_blur` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `selected` | ? | See all-components.md for details |
-| `toolbar` | ? | See all-components.md for details |
-| `withCodeHighlightStyles` | ? | See all-components.md for details |
-| `withTypographyStyles` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -54,21 +94,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.RichTextEditor(
-    id="my-richtexteditor",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

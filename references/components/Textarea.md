@@ -2,7 +2,33 @@
 
 **Component**: `dmc.Textarea`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Stack(
+    children=[
+        dmc.Textarea(
+            label="Autosize with no rows limit",
+            placeholder="Autosize with no rows limit",
+            w=500,
+            autosize=True,
+            minRows=2,
+        ),
+        dmc.Textarea(
+            label="Autosize with 4 rows max",
+            placeholder="Autosize with 4 rows max",
+            w=500,
+            autosize=True,
+            minRows=2,
+            maxRows=4,
+        ),
+    ],
+)
 
 ---
 
@@ -14,51 +40,7 @@ The following props are specific to this component:
 autoComplete, autosize, debounce, description, descriptionProps, disabled, error, errorProps, inputProps, inputWrapperOrder, label, labelProps, leftSection, leftSectionPointerEvents, leftSectionProps, leftSectionWidth, maxRows, minRows, n_blur, n_submit, name, persisted_props, persistence, persistence_type, placeholder, pointer, radius, readOnly, required, resize, rightSection, rightSectionPointerEvents, rightSectionProps, rightSectionWidth, size, spellCheck, value, withAsterisk, withErrorStyles, wrapperProps
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoComplete` | ? | See all-components.md for details |
-| `autosize` | ? | See all-components.md for details |
-| `debounce` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `descriptionProps` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `errorProps` | ? | See all-components.md for details |
-| `inputProps` | ? | See all-components.md for details |
-| `inputWrapperOrder` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelProps` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `leftSectionPointerEvents` | ? | See all-components.md for details |
-| `leftSectionProps` | ? | See all-components.md for details |
-| `leftSectionWidth` | ? | See all-components.md for details |
-| `maxRows` | ? | See all-components.md for details |
-| `minRows` | ? | See all-components.md for details |
-| `n_blur` | ? | See all-components.md for details |
-| `n_submit` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `placeholder` | ? | See all-components.md for details |
-| `pointer` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `required` | ? | See all-components.md for details |
-| `resize` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `rightSectionPointerEvents` | ? | See all-components.md for details |
-| `rightSectionProps` | ? | See all-components.md for details |
-| `rightSectionWidth` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `spellCheck` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withAsterisk` | ? | See all-components.md for details |
-| `withErrorStyles` | ? | See all-components.md for details |
-| `wrapperProps` | ? | See all-components.md for details |
-
+**Props count**: 40
 
 ---
 
@@ -79,21 +61,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Textarea(
-    id="my-textarea",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

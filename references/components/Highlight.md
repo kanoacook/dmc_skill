@@ -2,7 +2,25 @@
 
 **Component**: `dmc.Highlight`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Highlight(
+    "You can change styles of highlighted part if you do not like default styles",
+    ta="center",
+    highlight=["highlighted", "default"],
+    highlightStyles={
+        "backgroundImage": "linear-gradient(45deg, var(--mantine-color-cyan-5), var(--mantine-color-indigo-5))",
+        "fontWeight": 500,
+        "WebkitBackgroundClip": "text",
+        "WebkitTextFillColor": "transparent",
+    },
+)
 
 ---
 
@@ -14,22 +32,7 @@ The following props are specific to this component:
 children, color, gradient, highlight, highlightStyles, inherit, inline, lineClamp, size, span, truncate
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `highlight` | ? | See all-components.md for details |
-| `highlightStyles` | ? | See all-components.md for details |
-| `inherit` | ? | See all-components.md for details |
-| `inline` | ? | See all-components.md for details |
-| `lineClamp` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `span` | ? | See all-components.md for details |
-| `truncate` | ? | See all-components.md for details |
-
+**Props count**: 11
 
 ---
 
@@ -50,21 +53,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Highlight(
-    id="my-highlight",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

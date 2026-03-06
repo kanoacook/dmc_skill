@@ -1,8 +1,47 @@
-# BarChart
+# Barchart
 
-**Component**: `dmc.BarChart`
+**Component**: `dmc.Barchart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html, dcc
+from .data import data
+
+# Define patterns for custom colors
+pattern_definitions = dcc.Markdown('''
+<svg>
+  <defs>
+    <pattern id="diagonalStripes" patternUnits="userSpaceOnUse" width="6" height="8" patternTransform="rotate(45)">
+      <rect width="2" height="8" fill="rgba(0, 128, 128, 0.7)"></rect>
+    </pattern>
+    <pattern id="crosshatch" patternUnits="userSpaceOnUse" width="8" height="8">
+      <path d="M 0 0 L 8 0 L 8 8 L 0 8 Z" fill="none" stroke="rgba(75, 0, 130, 0.7)" strokeWidth="1"></path>
+      <path d="M 0 0 L 8 8" stroke="rgba(75, 0, 130, 0.7)" strokeWidth="1"></path>
+      <path d="M 8 0 L 0 8" stroke="rgba(75, 0, 130, 0.7)" strokeWidth="1"></path>
+    </pattern>
+  </defs>
+</svg>
+''', dangerously_allow_html=True)
+
+html.Div([
+    pattern_definitions,
+    dmc.BarChart(
+        h=300,
+        dataKey="month",
+        data=data,
+        type="stacked",
+        series=[
+            {"name": "Smartphones", "color": "url(#crosshatch)"},
+            {"name": "Laptops", "color": "blue.6"},
+            {"name": "Tablets", "color": "url(#diagonalStripes)"},
+        ],
+    )
+])
 
 ---
 
@@ -11,58 +50,10 @@
 The following props are specific to this component:
 
 ```
-barChartProps, barLabelColor, barProps, children, clickData, clickSeriesName, cursorFill, data, dataKey, fillOpacity, getBarColor, gridAxis, gridColor, gridProps, highlightHover, hoverData, hoverSeriesName, legendProps, maxBarWidth, minBarSize, orientation, referenceLines, rightYAxisLabel, rightYAxisProps, series, strokeDasharray, textColor, tickLine, tooltipAnimationDuration, tooltipProps, type, unit, valueFormatter, valueLabelProps, withBarValueLabel, withLegend, withRightYAxis, withTooltip, withXAxis, withYAxis, xAxisLabel, xAxisProps, yAxisLabel, yAxisProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `barChartProps` | ? | See all-components.md for details |
-| `barLabelColor` | ? | See all-components.md for details |
-| `barProps` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `clickData` | ? | See all-components.md for details |
-| `clickSeriesName` | ? | See all-components.md for details |
-| `cursorFill` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `dataKey` | ? | See all-components.md for details |
-| `fillOpacity` | ? | See all-components.md for details |
-| `getBarColor` | ? | See all-components.md for details |
-| `gridAxis` | ? | See all-components.md for details |
-| `gridColor` | ? | See all-components.md for details |
-| `gridProps` | ? | See all-components.md for details |
-| `highlightHover` | ? | See all-components.md for details |
-| `hoverData` | ? | See all-components.md for details |
-| `hoverSeriesName` | ? | See all-components.md for details |
-| `legendProps` | ? | See all-components.md for details |
-| `maxBarWidth` | ? | See all-components.md for details |
-| `minBarSize` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `referenceLines` | ? | See all-components.md for details |
-| `rightYAxisLabel` | ? | See all-components.md for details |
-| `rightYAxisProps` | ? | See all-components.md for details |
-| `series` | ? | See all-components.md for details |
-| `strokeDasharray` | ? | See all-components.md for details |
-| `textColor` | ? | See all-components.md for details |
-| `tickLine` | ? | See all-components.md for details |
-| `tooltipAnimationDuration` | ? | See all-components.md for details |
-| `tooltipProps` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-| `unit` | ? | See all-components.md for details |
-| `valueFormatter` | ? | See all-components.md for details |
-| `valueLabelProps` | ? | See all-components.md for details |
-| `withBarValueLabel` | ? | See all-components.md for details |
-| `withLegend` | ? | See all-components.md for details |
-| `withRightYAxis` | ? | See all-components.md for details |
-| `withTooltip` | ? | See all-components.md for details |
-| `withXAxis` | ? | See all-components.md for details |
-| `withYAxis` | ? | See all-components.md for details |
-| `xAxisLabel` | ? | See all-components.md for details |
-| `xAxisProps` | ? | See all-components.md for details |
-| `yAxisLabel` | ? | See all-components.md for details |
-| `yAxisProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -83,21 +74,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.BarChart(
-    id="my-barchart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

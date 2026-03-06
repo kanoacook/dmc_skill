@@ -2,7 +2,42 @@
 
 **Component**: `dmc.Tabs`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import Input, Output, html, callback
+
+from lib.utils import create_graph
+
+html.Div(
+    [
+        dmc.Tabs(
+            [
+                dmc.TabsList(
+                    [
+                        dmc.TabsTab("Tab one", value="1"),
+                        dmc.TabsTab("Tab two", value="2"),
+                    ]
+                ),
+            ],
+            id="tabs-example",
+            value="1",
+        ),
+        html.Div(id="tabs-content", style={"paddingTop": 10}),
+    ]
+)
+
+
+@callback(Output("tabs-content", "children"), Input("tabs-example", "value"))
+def render_content(active):
+    if active == "1":
+        return [dmc.Text("Tab One selected", my=10), create_graph()]
+    else:
+        return [dmc.Text("Tab Two selected", my=10), create_graph()]
 
 ---
 
@@ -14,26 +49,7 @@ The following props are specific to this component:
 activateTabWithKeyboard, allowTabDeactivation, autoContrast, children, color, inverted, keepMounted, loop, orientation, persisted_props, persistence, persistence_type, placement, radius, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `activateTabWithKeyboard` | ? | See all-components.md for details |
-| `allowTabDeactivation` | ? | See all-components.md for details |
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `inverted` | ? | See all-components.md for details |
-| `keepMounted` | ? | See all-components.md for details |
-| `loop` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `placement` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 15
 
 ---
 
@@ -54,21 +70,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Tabs(
-    id="my-tabs",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

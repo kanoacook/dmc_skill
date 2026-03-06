@@ -2,7 +2,43 @@
 
 **Component**: `dmc.Badge`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Group(
+    children=[
+        dmc.Badge(
+            "Indigo cyan",
+            variant="gradient",
+            gradient={"from": "indigo", "to": "cyan"},
+        ),
+        dmc.Badge(
+            "Lime green",
+            variant="gradient",
+            gradient={"from": "teal", "to": "lime", "deg": 105},
+        ),
+        dmc.Badge(
+            "Teal blue",
+            variant="gradient",
+            gradient={"from": "teal", "to": "blue", "deg": 60},
+        ),
+        dmc.Badge(
+            "Orange red",
+            variant="gradient",
+            gradient={"from": "orange", "to": "red"},
+        ),
+        dmc.Badge(
+            "Grape pink",
+            variant="gradient",
+            gradient={"from": "grape", "to": "pink", "deg": 35},
+        ),
+    ]
+)
 
 ---
 
@@ -14,21 +50,7 @@ The following props are specific to this component:
 autoContrast, children, circle, color, fullWidth, gradient, leftSection, radius, rightSection, size
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `circle` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `fullWidth` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-
+**Props count**: 10
 
 ---
 
@@ -49,21 +71,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Badge(
-    id="my-badge",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

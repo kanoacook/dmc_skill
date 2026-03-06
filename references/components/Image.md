@@ -2,7 +2,34 @@
 
 **Component**: `dmc.Image`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+html.Div(
+    style={"width": 300},
+    children=dmc.BackgroundImage(
+        src="https://images.unsplash.com/photo-1419242902214-272b3f66ee7a?ixlib=rb-1.2.1&ixid"
+        "=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=720&q=80",
+        children=[
+            dmc.Center(
+                p="md",
+                children=[
+                    dmc.Text(
+                        "BackgroundImage component can be used to add any content on image. It is used for cards, "
+                        "hero headers and similar components",
+                        c="yellow",
+                    )
+                ],
+            )
+        ],
+    ),
+)
 
 ---
 
@@ -14,16 +41,7 @@ The following props are specific to this component:
 alt, fallbackSrc, fit, radius, src
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `alt` | ? | See all-components.md for details |
-| `fallbackSrc` | ? | See all-components.md for details |
-| `fit` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `src` | ? | See all-components.md for details |
-
+**Props count**: 5
 
 ---
 
@@ -44,21 +62,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Image(
-    id="my-image",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

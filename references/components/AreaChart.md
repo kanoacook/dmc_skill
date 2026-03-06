@@ -1,8 +1,78 @@
-# AreaChart
+# Areachart
 
-**Component**: `dmc.AreaChart`
+**Component**: `dmc.Areachart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from random import randint
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+dmc.Box(
+    [
+        dmc.Button("Update Chart", id="btn-areachart-animation"),
+        dmc.AreaChart(
+            id="areachart-animation",
+            h=300,
+            dataKey="date",
+            data=[{}],
+            tooltipAnimationDuration=500,
+            areaProps={
+                "isAnimationActive": True,
+                "animationDuration": 500,
+                "animationEasing": "ease-in-out",
+                "animationBegin": 500,
+            },
+            series=[
+                {"name": "Apples", "color": "indigo.6"},
+                {"name": "Oranges", "color": "blue.6"},
+                {"name": "Tomatoes", "color": "teal.6"},
+            ],
+        ),
+    ]
+)
+
+
+@callback(
+    Output("areachart-animation", "data"), Input("btn-areachart-animation", "n_clicks")
+)
+def update(n):
+    return [
+        {
+            "date": "Mar 22",
+            "Apples": 2890,
+            "Oranges": 2338,
+            "Tomatoes": randint(1000, 4000),
+        },
+        {
+            "date": "Mar 23",
+            "Apples": 2756,
+            "Oranges": 2103,
+            "Tomatoes": randint(1000, 4000),
+        },
+        {
+            "date": "Mar 24",
+            "Apples": 3322,
+            "Oranges": 986,
+            "Tomatoes": randint(1000, 4000),
+        },
+        {
+            "date": "Mar 25",
+            "Apples": 3470,
+            "Oranges": 2108,
+            "Tomatoes": randint(1000, 4000),
+        },
+        {
+            "date": "Mar 26",
+            "Apples": 3129,
+            "Oranges": 1726,
+            "Tomatoes": randint(1000, 4000),
+        },
+    ]
 
 ---
 
@@ -11,61 +81,10 @@
 The following props are specific to this component:
 
 ```
-activeDotProps, areaChartProps, areaProps, children, clickData, clickSeriesName, connectNulls, curveType, data, dataKey, dotProps, fillOpacity, gridAxis, gridColor, gridProps, highlightHover, hoverData, hoverSeriesName, legendProps, orientation, referenceLines, rightYAxisLabel, rightYAxisProps, series, splitColors, splitOffset, strokeDasharray, strokeWidth, textColor, tickLine, tooltipAnimationDuration, tooltipProps, type, unit, valueFormatter, withDots, withGradient, withLegend, withPointLabels, withRightYAxis, withTooltip, withXAxis, withYAxis, xAxisLabel, xAxisProps, yAxisLabel, yAxisProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `activeDotProps` | ? | See all-components.md for details |
-| `areaChartProps` | ? | See all-components.md for details |
-| `areaProps` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `clickData` | ? | See all-components.md for details |
-| `clickSeriesName` | ? | See all-components.md for details |
-| `connectNulls` | ? | See all-components.md for details |
-| `curveType` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `dataKey` | ? | See all-components.md for details |
-| `dotProps` | ? | See all-components.md for details |
-| `fillOpacity` | ? | See all-components.md for details |
-| `gridAxis` | ? | See all-components.md for details |
-| `gridColor` | ? | See all-components.md for details |
-| `gridProps` | ? | See all-components.md for details |
-| `highlightHover` | ? | See all-components.md for details |
-| `hoverData` | ? | See all-components.md for details |
-| `hoverSeriesName` | ? | See all-components.md for details |
-| `legendProps` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `referenceLines` | ? | See all-components.md for details |
-| `rightYAxisLabel` | ? | See all-components.md for details |
-| `rightYAxisProps` | ? | See all-components.md for details |
-| `series` | ? | See all-components.md for details |
-| `splitColors` | ? | See all-components.md for details |
-| `splitOffset` | ? | See all-components.md for details |
-| `strokeDasharray` | ? | See all-components.md for details |
-| `strokeWidth` | ? | See all-components.md for details |
-| `textColor` | ? | See all-components.md for details |
-| `tickLine` | ? | See all-components.md for details |
-| `tooltipAnimationDuration` | ? | See all-components.md for details |
-| `tooltipProps` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-| `unit` | ? | See all-components.md for details |
-| `valueFormatter` | ? | See all-components.md for details |
-| `withDots` | ? | See all-components.md for details |
-| `withGradient` | ? | See all-components.md for details |
-| `withLegend` | ? | See all-components.md for details |
-| `withPointLabels` | ? | See all-components.md for details |
-| `withRightYAxis` | ? | See all-components.md for details |
-| `withTooltip` | ? | See all-components.md for details |
-| `withXAxis` | ? | See all-components.md for details |
-| `withYAxis` | ? | See all-components.md for details |
-| `xAxisLabel` | ? | See all-components.md for details |
-| `xAxisProps` | ? | See all-components.md for details |
-| `yAxisLabel` | ? | See all-components.md for details |
-| `yAxisProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -86,21 +105,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.AreaChart(
-    id="my-areachart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

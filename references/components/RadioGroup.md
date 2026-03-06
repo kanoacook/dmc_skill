@@ -1,8 +1,57 @@
-# RadioGroup
+# Radiogroup
 
-**Component**: `dmc.RadioGroup`
+**Component**: `dmc.Radiogroup`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import  Input, Output, callback
+import dash_mantine_components as dmc
+
+def make_radiocard(label, description):
+    return dmc.RadioCard(
+        withBorder=True,
+        p="md",
+        mt="md",
+        className="checkboxcard-root",
+        value=label,
+        children=[
+            dmc.Group([
+                dmc.RadioIndicator(),
+                dmc.Box([
+                    dmc.Text(label, lh="1.3", fz="md", fw="bold" ),
+                    dmc.Text(description, size="sm", c="dimmed"),
+                ])
+            ], wrap="nowrap", align="flex-start"),
+        ]
+    )
+
+
+component = dmc.Box([
+    dmc.RadioGroup(
+        id="radiocard-group",
+        label= "RadioGroup label",
+        value="RadioCard 1",
+        description="This is a RadioGroup description",
+        deselectable=True,
+        children=[
+            make_radiocard(f"RadioCard {i}", f"RadioCard description {i}")
+            for i in range(1, 5)
+        ]
+    ),
+    dmc.Box(id="radio-group-out"),
+])
+
+
+@callback(
+    Output("radiocard-group-out", "children"),
+    Input("radiocard-group", "value")
+)
+def update(checked):
+   return f"Selected: {checked}"
 
 ---
 
@@ -11,34 +60,10 @@
 The following props are specific to this component:
 
 ```
-children, description, descriptionProps, deselectable, error, errorProps, inputWrapperOrder, label, labelElement, labelProps, name, persisted_props, persistence, persistence_type, readOnly, required, size, value, withAsterisk, wrapperProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `descriptionProps` | ? | See all-components.md for details |
-| `deselectable` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `errorProps` | ? | See all-components.md for details |
-| `inputWrapperOrder` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelElement` | ? | See all-components.md for details |
-| `labelProps` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `required` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withAsterisk` | ? | See all-components.md for details |
-| `wrapperProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -59,21 +84,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.RadioGroup(
-    id="my-radiogroup",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

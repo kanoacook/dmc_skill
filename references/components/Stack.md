@@ -2,7 +2,23 @@
 
 **Component**: `dmc.Stack`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Stack(
+    [
+        dmc.Button("1", variant="outline"),
+        dmc.Button("2", variant="outline"),
+        dmc.Button("3", variant="outline"),
+    ],
+    align="center",
+    gap="xl",
+)
 
 ---
 
@@ -14,15 +30,7 @@ The following props are specific to this component:
 align, children, gap, justify
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `align` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `gap` | ? | See all-components.md for details |
-| `justify` | ? | See all-components.md for details |
-
+**Props count**: 4
 
 ---
 
@@ -43,21 +51,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Stack(
-    id="my-stack",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

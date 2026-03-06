@@ -2,7 +2,42 @@
 
 **Component**: `dmc.Container`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+
+dmc.Container(
+    [
+        dmc.Box("Main Content", bg="var(--mantine-color-indigo-light)", h=50),
+        html.Div(
+            [
+                "Breakout",
+                html.Div(
+                    "Container inside breakout",
+                    style={
+                        "backgroundColor": "var(--mantine-color-indigo-filled)",
+                        "color": "white",
+                        "height": 50,
+                    },
+                    **{"data-container": ""}
+                ),
+            ],
+            style={
+                "backgroundColor": "var(--mantine-color-indigo-light)",
+                "marginTop": 16,
+            },
+            **{"data-breakout": ""}
+        ),
+    ],
+    size=500,
+    strategy="grid",
+)
 
 ---
 
@@ -14,15 +49,7 @@ The following props are specific to this component:
 children, fluid, size, strategy
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `fluid` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `strategy` | ? | See all-components.md for details |
-
+**Props count**: 4
 
 ---
 
@@ -43,21 +70,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Container(
-    id="my-container",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

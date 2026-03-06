@@ -2,7 +2,71 @@
 
 **Component**: `dmc.Notification`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import Input, Output, callback, no_update
+import dash_mantine_components as dmc
+
+dmc.Group(
+    justify="center",
+    children=[
+        dmc.Button("Closes in 4 seconds", id="default-close-btn", n_clicks=0),
+        dmc.Button("Closes in 500ms", id="short-close-btn", n_clicks=0),
+        dmc.Button("Never closes automatically", id="no-autoclose-btn", n_clicks=0),
+      #  dmc.NotificationsContainer(id="notification-container"),
+    ]
+)
+
+
+@callback(
+    Output("notification-container", "sendNotifications", allow_duplicate=True),
+    Input("default-close-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def short_notification(n):
+    if n > 0:
+        return [{
+            "action": "show",
+            "message": "I will close in 4 seconds (the default auto close)",
+
+        }]
+    return no_update
+
+@callback(
+    Output("notification-container", "sendNotifications", allow_duplicate=True),
+    Input("short-close-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def short_notification(n):
+    if n > 0:
+        return [{
+            "action": "show",
+            "message": "I will close in 500ms",
+            "autoClose": 500,
+        }]
+    return no_update
+
+
+@callback(
+    Output("notification-container", "sendNotifications", allow_duplicate=True),
+    Input("no-autoclose-btn", "n_clicks"),
+    prevent_initial_call=True
+)
+def sticky_notification(n):
+    if n > 0:
+        return [{
+            "action": "show",
+            "title": "I will never close",
+            "message": "unless you click X",
+            "color": "blue",
+            "autoClose": False,
+            "style": {"marginBottom": 20}
+        }]
+    return no_update
 
 ---
 
@@ -14,23 +78,7 @@ The following props are specific to this component:
 action, autoClose, closeButtonProps, color, icon, loading, message, position, radius, title, withBorder, withCloseButton
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `action` | ? | See all-components.md for details |
-| `autoClose` | ? | See all-components.md for details |
-| `closeButtonProps` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `icon` | ? | See all-components.md for details |
-| `loading` | ? | See all-components.md for details |
-| `message` | ? | See all-components.md for details |
-| `position` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `title` | ? | See all-components.md for details |
-| `withBorder` | ? | See all-components.md for details |
-| `withCloseButton` | ? | See all-components.md for details |
-
+**Props count**: 12
 
 ---
 
@@ -51,21 +99,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Notification(
-    id="my-notification",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -1,8 +1,30 @@
-# DatesProvider
+# Datesprovider
 
-**Component**: `dmc.DatesProvider`
+**Component**: `dmc.Datesprovider`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.DatesProvider(
+    children=dmc.Stack(
+        [
+            dmc.DatePickerInput(
+                w=250,
+                label="Sélectionner une date",
+            ),
+            dmc.DatePickerInput(
+                w=250,
+                label="Sélectionner une autre date",
+            ),
+        ]
+    ),
+    settings={"locale": "fr", "firstDayOfWeek": 0, "weekendDays": [0]},
+)
 
 ---
 
@@ -11,16 +33,10 @@
 The following props are specific to this component:
 
 ```
-children, settings
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `settings` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -41,21 +57,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.DatesProvider(
-    id="my-datesprovider",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

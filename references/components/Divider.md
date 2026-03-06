@@ -2,7 +2,21 @@
 
 **Component**: `dmc.Divider`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Stack(
+    [
+        dmc.Divider(label="Click on update button to refresh"),
+        dmc.Divider(label="Divider with centered content", labelPosition="center"),
+        dmc.Divider(label="Divider with content on the right", labelPosition="right"),
+    ],
+)
 
 ---
 
@@ -14,16 +28,7 @@ The following props are specific to this component:
 color, label, labelPosition, orientation, size
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `color` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelPosition` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-
+**Props count**: 5
 
 ---
 
@@ -44,21 +49,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Divider(
-    id="my-divider",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

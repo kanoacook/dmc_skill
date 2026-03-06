@@ -2,7 +2,27 @@
 
 **Component**: `dmc.Indicator`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Indicator(
+    dmc.Avatar(
+        size="lg",
+        radius="xl",
+        src="https://raw.githubusercontent.com/mantinedev/mantine/master/.demo/avatars/avatar-3.png",
+    ),
+    inline=True,
+    offset=7,
+    position="bottom-end",
+    color="red",
+    withBorder=True,
+    size=16,
+)
 
 ---
 
@@ -14,24 +34,7 @@ The following props are specific to this component:
 autoContrast, children, color, disabled, inline, label, offset, position, processing, radius, size, withBorder, zIndex
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `inline` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `offset` | ? | See all-components.md for details |
-| `position` | ? | See all-components.md for details |
-| `processing` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `withBorder` | ? | See all-components.md for details |
-| `zIndex` | ? | See all-components.md for details |
-
+**Props count**: 13
 
 ---
 
@@ -52,21 +55,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Indicator(
-    id="my-indicator",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

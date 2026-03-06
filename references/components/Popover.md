@@ -2,7 +2,56 @@
 
 **Component**: `dmc.Popover`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+
+dmc.Box(
+    style={"border": "1px solid var(--mantine-color-dimmed)", "overflow": "auto"},
+    p="xl",
+    w=400,
+    h=200,
+    children=[
+        dmc.Box(
+            w=1000,
+            h=400,
+            children=dmc.Group(
+                [
+                    dmc.Popover(
+                        opened=True,
+                        width="target",
+                        position="bottom",
+                        closeOnClickOutside=False,
+                        children=[
+                            dmc.PopoverTarget(
+                                dmc.Button("Toggle popover")
+                            ),
+                            dmc.PopoverDropdown("This popover dropdown is hidden when detached"),
+                        ],
+                    ),
+                    dmc.Popover(
+                        opened=True,
+                        width="target",
+                        position="bottom",
+                        closeOnClickOutside=False,
+                        hideDetached=False,
+                        children=[
+                            dmc.PopoverTarget(
+                                dmc.Button("Toggle popover")
+                            ),
+                            dmc.PopoverDropdown("This popover dropdown is visible when detached"),
+                        ],
+                    ),
+                ]
+            ),
+        )
+    ]
+)
 
 ---
 
@@ -14,41 +63,7 @@ The following props are specific to this component:
 arrowOffset, arrowPosition, arrowRadius, arrowSize, children, clickOutsideEvents, closeOnClickOutside, closeOnEscape, disabled, floatingStrategy, hideDetached, keepMounted, middlewares, offset, opened, overlayProps, portalProps, position, positionDependencies, radius, returnFocus, shadow, transitionProps, trapFocus, width, withArrow, withOverlay, withRoles, withinPortal, zIndex
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `arrowOffset` | ? | See all-components.md for details |
-| `arrowPosition` | ? | See all-components.md for details |
-| `arrowRadius` | ? | See all-components.md for details |
-| `arrowSize` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `clickOutsideEvents` | ? | See all-components.md for details |
-| `closeOnClickOutside` | ? | See all-components.md for details |
-| `closeOnEscape` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `floatingStrategy` | ? | See all-components.md for details |
-| `hideDetached` | ? | See all-components.md for details |
-| `keepMounted` | ? | See all-components.md for details |
-| `middlewares` | ? | See all-components.md for details |
-| `offset` | ? | See all-components.md for details |
-| `opened` | ? | See all-components.md for details |
-| `overlayProps` | ? | See all-components.md for details |
-| `portalProps` | ? | See all-components.md for details |
-| `position` | ? | See all-components.md for details |
-| `positionDependencies` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `returnFocus` | ? | See all-components.md for details |
-| `shadow` | ? | See all-components.md for details |
-| `transitionProps` | ? | See all-components.md for details |
-| `trapFocus` | ? | See all-components.md for details |
-| `width` | ? | See all-components.md for details |
-| `withArrow` | ? | See all-components.md for details |
-| `withOverlay` | ? | See all-components.md for details |
-| `withRoles` | ? | See all-components.md for details |
-| `withinPortal` | ? | See all-components.md for details |
-| `zIndex` | ? | See all-components.md for details |
-
+**Props count**: 30
 
 ---
 
@@ -69,21 +84,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Popover(
-    id="my-popover",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

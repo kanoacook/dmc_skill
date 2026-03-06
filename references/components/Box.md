@@ -2,7 +2,27 @@
 
 **Component**: `dmc.Box`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+# Using html.Div
+html.Div(
+    [
+        # your content here
+    ],
+    style={"marginTop": 8, "padding": 24}
+)
+
+# Using dmc.Box with Style Props
+dmc.Box(
+    [
+        # your content here
+    ],
+    mt=8, p=24
+)
 
 ---
 
@@ -14,12 +34,7 @@ The following props are specific to this component:
 children
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-
+**Props count**: 1
 
 ---
 
@@ -40,21 +55,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Box(
-    id="my-box",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

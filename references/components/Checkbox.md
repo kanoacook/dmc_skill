@@ -2,7 +2,58 @@
 
 **Component**: `dmc.Checkbox`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import  html,  Input, Output,  callback, ALL, ctx
+import dash_mantine_components as dmc
+
+initial_values = [
+    {"label": "Receive email notifications", "checked": False},
+    {"label": "Receive sms notifications", "checked": True},
+    {"label": "Receive push notifications", "checked": False},
+]
+
+html.Div([
+    dmc.Checkbox(
+        id="all-notifications",
+        label="Receive all notifications",
+        checked=False,
+        indeterminate=False
+    ),
+    html.Div([
+        dmc.Checkbox(
+            id={"type": "notification-item", "index": i},
+            label=item["label"],
+            checked=item["checked"],
+            style={"marginTop": "5px", "marginLeft": "33px"}
+        )
+        for i, item in enumerate(initial_values)
+    ])
+])
+
+
+
+@callback(
+    Output("all-notifications", "checked"),
+    Output("all-notifications", "indeterminate"),
+    Output({"type": "notification-item", "index": ALL}, "checked"),
+    Input("all-notifications", "checked"),
+    Input({"type": "notification-item", "index": ALL}, "checked"),
+    prevent_initial_callback=True
+)
+def update_main_checkbox(all_checked, checked_states):
+    # handle "all" checkbox"
+    if ctx.triggered_id == 'all-notifications':
+        checked_states = [all_checked] * len(checked_states)
+
+    # handled individual check boxes
+    all_checked_states = all(checked_states)
+    indeterminate = any(checked_states) and not all_checked_states
+    return all_checked_states, indeterminate, checked_states
 
 ---
 
@@ -14,30 +65,7 @@ The following props are specific to this component:
 autoContrast, checked, color, description, disabled, error, icon, iconColor, indeterminate, indeterminateIcon, label, labelPosition, persisted_props, persistence, persistence_type, radius, size, value, wrapperProps
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `checked` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `error` | ? | See all-components.md for details |
-| `icon` | ? | See all-components.md for details |
-| `iconColor` | ? | See all-components.md for details |
-| `indeterminate` | ? | See all-components.md for details |
-| `indeterminateIcon` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `labelPosition` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `wrapperProps` | ? | See all-components.md for details |
-
+**Props count**: 19
 
 ---
 
@@ -58,21 +86,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Checkbox(
-    id="my-checkbox",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

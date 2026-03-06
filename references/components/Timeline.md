@@ -2,7 +2,84 @@
 
 **Component**: `dmc.Timeline`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+
+dmc.Timeline(
+    active=1,
+    bulletSize=15,
+    lineWidth=2,
+    children=[
+        dmc.TimelineItem(
+            title="New Branch",
+            children=[
+                dmc.Text(
+                    [
+                        "You've created new branch ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                        " from master",
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            title="Commits",
+            children=[
+                dmc.Text(
+                    [
+                        "You've pushed 23 commits to ",
+                        dmc.Anchor("fix-notification", href="#", size="sm"),
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            title="Pull Request",
+            lineVariant="dashed",
+            children=[
+                dmc.Text(
+                    [
+                        "You've submitted a pull request ",
+                        dmc.Anchor(
+                            "Fix incorrect notification message (#178)",
+                            href="#",
+                            size="sm",
+                        ),
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+        ),
+        dmc.TimelineItem(
+            [
+                dmc.Text(
+                    [
+                        dmc.Anchor(
+                            "AnnMarieW",
+                            href="https://github.com/AnnMarieW",
+                            size="sm",
+                        ),
+                        " left a comment on your pull request",
+                    ],
+                    c="dimmed",
+                    size="sm",
+                ),
+            ],
+            title="Code Review",
+        ),
+    ],
+)
 
 ---
 
@@ -14,20 +91,7 @@ The following props are specific to this component:
 active, align, autoContrast, bulletSize, children, color, lineWidth, radius, reverseActive
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `active` | ? | See all-components.md for details |
-| `align` | ? | See all-components.md for details |
-| `autoContrast` | ? | See all-components.md for details |
-| `bulletSize` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `lineWidth` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `reverseActive` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +112,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Timeline(
-    id="my-timeline",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

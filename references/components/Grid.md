@@ -2,7 +2,41 @@
 
 **Component**: `dmc.Grid`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+style = {
+    "border": f"1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+}
+
+dmc.Box(
+    # Wrapper div is added for demonstration purposes only,
+    # it is not required in real projects
+    dmc.Grid(
+        children=[
+            dmc.GridCol(dmc.Box("1", style=style), span={"base": 12, "md": 6, "lg": 3}),
+            dmc.GridCol(dmc.Box("2", style=style), span={"base": 12, "md": 6, "lg": 3}),
+            dmc.GridCol(dmc.Box("3", style=style), span={"base": 12, "md": 6, "lg": 3}),
+            dmc.GridCol(dmc.Box("4", style=style), span={"base": 12, "md": 6, "lg": 3}),
+        ],
+        gutter="xl",
+        type="container",
+        breakpoints={
+            "xs": "100px",
+            "sm": "200px",
+            "md": "300px",
+            "lg": "400px",
+            "xl": "500px",
+        },
+    ),
+    style={"resize": 'horizontal', "overflow": 'hidden', "maxWidth": '100%', "margin": 24 },
+)
 
 ---
 
@@ -14,20 +48,7 @@ The following props are specific to this component:
 align, breakpoints, children, columns, grow, gutter, justify, overflow, type
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `align` | ? | See all-components.md for details |
-| `breakpoints` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `columns` | ? | See all-components.md for details |
-| `grow` | ? | See all-components.md for details |
-| `gutter` | ? | See all-components.md for details |
-| `justify` | ? | See all-components.md for details |
-| `overflow` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +69,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Grid(
-    id="my-grid",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

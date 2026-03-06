@@ -2,7 +2,23 @@
 
 **Component**: `dmc.Burger`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import Input, Output, callback, html
+
+html.Div(
+    [dmc.Burger(id="burger-button", opened=False), dmc.Text(id="burger-state", mt="md")]
+)
+
+
+@callback(Output("burger-state", "children"), Input("burger-button", "opened"))
+def is_open(opened):
+    return str(opened)
 
 ---
 
@@ -14,20 +30,7 @@ The following props are specific to this component:
 color, lineSize, opened, persisted_props, persistence, persistence_type, size, transitionDuration, transitionTimingFunction
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `color` | ? | See all-components.md for details |
-| `lineSize` | ? | See all-components.md for details |
-| `opened` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `transitionDuration` | ? | See all-components.md for details |
-| `transitionTimingFunction` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +51,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Burger(
-    id="my-burger",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

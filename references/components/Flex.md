@@ -2,7 +2,24 @@
 
 **Component**: `dmc.Flex`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Flex(
+    [
+        dmc.Button("Button 1"),
+        dmc.Button("Button 2"),
+        dmc.Button("Button 3"),
+    ],
+    direction={"base": "column", "sm": "row"},
+    gap={"base": "sm", "sm": "lg"},
+    justify={"sm": "center"},
+)
 
 ---
 
@@ -14,19 +31,7 @@ The following props are specific to this component:
 align, children, columnGap, direction, gap, justify, rowGap, wrap
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `align` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `columnGap` | ? | See all-components.md for details |
-| `direction` | ? | See all-components.md for details |
-| `gap` | ? | See all-components.md for details |
-| `justify` | ? | See all-components.md for details |
-| `rowGap` | ? | See all-components.md for details |
-| `wrap` | ? | See all-components.md for details |
-
+**Props count**: 8
 
 ---
 
@@ -47,21 +52,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Flex(
-    id="my-flex",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -2,7 +2,23 @@
 
 **Component**: `dmc.Fieldset`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Fieldset(
+    children=[
+        dmc.TextInput(label="Your name", placeholder="Your name"),
+        dmc.TextInput(label="Email", placeholder="Email"),
+        dmc.Group([dmc.Button("Send")], justify="flex-end"),
+    ],
+    legend="Personal information",
+    disabled=True,
+)
 
 ---
 
@@ -14,15 +30,7 @@ The following props are specific to this component:
 children, disabled, legend, radius
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `legend` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-
+**Props count**: 4
 
 ---
 
@@ -43,21 +51,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Fieldset(
-    id="my-fieldset",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

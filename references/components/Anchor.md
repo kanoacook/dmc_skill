@@ -2,7 +2,41 @@
 
 **Component**: `dmc.Anchor`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+
+dmc.Group([
+    dmc.Anchor(
+        "Underline always",
+        href="https://www.dash-mantine-components.com/",
+        target="_blank",
+        underline = "always",
+    ),
+    dmc.Anchor(
+        "Underline on hover",
+        href="https://www.dash-mantine-components.com/",
+        target="_blank",
+        underline = "hover",
+    ),
+    dmc.Anchor(
+        "Underline never",
+        href="https://www.dash-mantine-components.com/",
+        target="_blank",
+        underline = "never",
+    ),
+    dmc.Anchor(
+        "Underline not hover",
+        href="https://www.dash-mantine-components.com/",
+        target="_blank",
+        underline = "not-hover",
+    ),
+
+])
 
 ---
 
@@ -14,22 +48,7 @@ The following props are specific to this component:
 children, gradient, href, inherit, inline, lineClamp, refresh, size, target, truncate, underline
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `gradient` | ? | See all-components.md for details |
-| `href` | ? | See all-components.md for details |
-| `inherit` | ? | See all-components.md for details |
-| `inline` | ? | See all-components.md for details |
-| `lineClamp` | ? | See all-components.md for details |
-| `refresh` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `target` | ? | See all-components.md for details |
-| `truncate` | ? | See all-components.md for details |
-| `underline` | ? | See all-components.md for details |
-
+**Props count**: 11
 
 ---
 
@@ -50,21 +69,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.Anchor(
-    id="my-anchor",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -1,8 +1,68 @@
-# NavLink
+# Navlink
 
-**Component**: `dmc.NavLink`
+**Component**: `dmc.Navlink`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+from dash_iconify import DashIconify
+
+
+def get_icon(icon):
+    return DashIconify(icon=icon, height=16)
+
+
+html.Div(
+    [
+        dmc.NavLink(
+            label="With icon",
+            leftSection=get_icon(icon="bi:house-door-fill"),
+        ),
+        dmc.NavLink(
+            label="With right section",
+            leftSection=get_icon(icon="tabler:gauge"),
+            rightSection=get_icon(icon="tabler-chevron-right"),
+        ),
+        dmc.NavLink(
+            label="Disabled",
+            leftSection=get_icon(icon="tabler:circle-off"),
+            disabled=True,
+        ),
+        dmc.NavLink(
+            label="With description",
+            description="Additional information",
+            leftSection=dmc.Badge(
+                "3", size="xs", variant="filled", color="red", w=16, h=16, p=0
+            ),
+        ),
+        dmc.NavLink(
+            label="Active subtle",
+            leftSection=get_icon(icon="tabler:activity"),
+            rightSection=get_icon(icon="tabler-chevron-right"),
+            variant="subtle",
+            active=True,
+        ),
+        dmc.NavLink(
+            label="Active light",
+            leftSection=get_icon(icon="tabler:activity"),
+            rightSection=get_icon(icon="tabler-chevron-right"),
+            active=True,
+        ),
+        dmc.NavLink(
+            label="Active filled",
+            leftSection=get_icon(icon="tabler:activity"),
+            rightSection=get_icon(icon="tabler-chevron-right"),
+            variant="filled",
+            active=True,
+        ),
+    ],
+    style={"width": 240},
+)
 
 ---
 
@@ -11,34 +71,10 @@
 The following props are specific to this component:
 
 ```
-active, autoContrast, children, childrenOffset, color, description, disableRightSectionRotation, disabled, href, label, leftSection, n_clicks, noWrap, opened, persisted_props, persistence, persistence_type, refresh, rightSection, target
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `active` | ? | See all-components.md for details |
-| `autoContrast` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `childrenOffset` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `description` | ? | See all-components.md for details |
-| `disableRightSectionRotation` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `href` | ? | See all-components.md for details |
-| `label` | ? | See all-components.md for details |
-| `leftSection` | ? | See all-components.md for details |
-| `n_clicks` | ? | See all-components.md for details |
-| `noWrap` | ? | See all-components.md for details |
-| `opened` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `refresh` | ? | See all-components.md for details |
-| `rightSection` | ? | See all-components.md for details |
-| `target` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -59,21 +95,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.NavLink(
-    id="my-navlink",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

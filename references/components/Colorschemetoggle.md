@@ -1,6 +1,6 @@
-# Code
+# Colorschemetoggle
 
-**Component**: `dmc.Code`
+**Component**: `dmc.Colorschemetoggle`
 
 **Version**: 2.6.0
 
@@ -9,19 +9,23 @@
 ## Overview
 
 import dash_mantine_components as dmc
+from dash import Dash
+from dash_iconify import DashIconify
 
-dmc.Code(
-    """from dash import Dash
-import dash_mantine_components as dmc
+app = Dash()
 
-app = Dash(__name__)
+component = dmc.ColorSchemeToggle(
+    lightIcon=DashIconify(icon="radix-icons:sun", width=20),
+    darkIcon=DashIconify(icon="radix-icons:moon", width=20),
+    color="yellow",
+    size="lg",
+    m="xl",
+)
 
-app.layout = dmc.Button("Settings")
+app.layout = dmc.MantineProvider(component)
 
 if __name__ == "__main__":
-    app.run_server(debug=True)""",
-    block=True,
-)
+    app.run(debug=True)
 
 ---
 
@@ -30,10 +34,10 @@ if __name__ == "__main__":
 The following props are specific to this component:
 
 ```
-block, children, color
+(See all-components.md for details)
 ```
 
-**Props count**: 3
+**Props count**: 0
 
 ---
 

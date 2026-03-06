@@ -1,8 +1,51 @@
-# SegmentedControl
+# Segmentedcontrol
 
-**Component**: `dmc.SegmentedControl`
+**Component**: `dmc.Segmentedcontrol`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import Output, Input, html, callback
+from dash_iconify import DashIconify
+
+data = [
+    ["Preview", "tabler:eye"],
+    ["Code", "tabler:code"],
+    ["Export", "tabler:external-link"],
+]
+
+html.Div(
+    [
+        dmc.SegmentedControl(
+            id="segmented-with-react-nodes",
+            value="Preview",
+            data=[
+                {
+                    "value": v,
+                    "label": dmc.Center(
+                        [DashIconify(icon=icon, width=16), html.Span(v)],
+                        style={"gap": 10},
+                    ),
+                }
+                for v, icon in data
+            ],
+            mb=10,
+        ),
+        dmc.Text(id="segmented--value-data"),
+    ]
+)
+
+
+@callback(
+    Output("segmented--value-data", "children"),
+    Input("segmented-with-react-nodes", "value"),
+)
+def update_value(value):
+    return value
 
 ---
 
@@ -11,31 +54,10 @@
 The following props are specific to this component:
 
 ```
-autoContrast, color, data, disabled, fullWidth, name, orientation, persisted_props, persistence, persistence_type, radius, readOnly, size, transitionDuration, transitionTimingFunction, value, withItemsBorders
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `autoContrast` | ? | See all-components.md for details |
-| `color` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `disabled` | ? | See all-components.md for details |
-| `fullWidth` | ? | See all-components.md for details |
-| `name` | ? | See all-components.md for details |
-| `orientation` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `radius` | ? | See all-components.md for details |
-| `readOnly` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `transitionDuration` | ? | See all-components.md for details |
-| `transitionTimingFunction` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-| `withItemsBorders` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -56,21 +78,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.SegmentedControl(
-    id="my-segmentedcontrol",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

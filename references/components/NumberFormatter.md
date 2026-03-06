@@ -2,7 +2,19 @@
 
 **Component**: `dmc.NumberFormatter`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import html
+import dash_mantine_components as dmc
+
+html.Div([
+    html.Div(["With prefix: ", dmc.NumberFormatter(value=100, prefix="$")]),
+    html.Div(["With suffix: ", dmc.NumberFormatter(value=100, suffix=" RUB")]),
+])
 
 ---
 
@@ -14,20 +26,7 @@ The following props are specific to this component:
 allowNegative, decimalScale, decimalSeparator, fixedDecimalScale, prefix, suffix, thousandSeparator, thousandsGroupStyle, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `allowNegative` | ? | See all-components.md for details |
-| `decimalScale` | ? | See all-components.md for details |
-| `decimalSeparator` | ? | See all-components.md for details |
-| `fixedDecimalScale` | ? | See all-components.md for details |
-| `prefix` | ? | See all-components.md for details |
-| `suffix` | ? | See all-components.md for details |
-| `thousandSeparator` | ? | See all-components.md for details |
-| `thousandsGroupStyle` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 9
 
 ---
 
@@ -48,21 +47,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.NumberFormatter(
-    id="my-numberformatter",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

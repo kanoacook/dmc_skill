@@ -1,8 +1,39 @@
-# SimpleGrid
+# Simplegrid
 
-**Component**: `dmc.SimpleGrid`
+**Component**: `dmc.Simplegrid`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import html
+
+style = {
+    "border": f"1px solid var(--mantine-primary-color-filled)",
+    "textAlign": "center",
+}
+
+html.Div(
+    # Wrapper div is added for demonstration purposes only,
+    # it is not required in real projects
+    dmc.SimpleGrid(
+        type="container",
+        cols={"base": 1, "300px": 2, "500px": 5},
+        spacing={"base": 10, "300px": "xl"},
+        children=[
+            html.Div("1", style=style),
+            html.Div("2", style=style),
+            html.Div("3", style=style),
+            html.Div("4", style=style),
+            html.Div("5", style=style),
+        ],
+        p="xs",
+    ),
+    style={"resize": "horizontal", "overflow": "hidden", "maxWidth": "100%"},
+)
 
 ---
 
@@ -11,19 +42,10 @@
 The following props are specific to this component:
 
 ```
-children, cols, spacing, type, verticalSpacing
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `children` | ? | See all-components.md for details |
-| `cols` | ? | See all-components.md for details |
-| `spacing` | ? | See all-components.md for details |
-| `type` | ? | See all-components.md for details |
-| `verticalSpacing` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -44,21 +66,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.SimpleGrid(
-    id="my-simplegrid",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

@@ -1,8 +1,47 @@
-# DonutChart
+# Donutchart
 
-**Component**: `dmc.DonutChart`
+**Component**: `dmc.Donutchart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from random import randint
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+
+def get_data(values):
+    return [
+        {"name": "A", "value": values[0], "color": "indigo.6"},
+        {"name": "B", "value": values[1], "color": "yellow.6"},
+        {"name": "C", "value": values[2], "color": "teal.6"},
+        {"name": "C", "value": values[3], "color": "gray.6"},
+    ]
+
+
+dmc.Box(
+    [
+        dmc.Button("Update Chart", id="btn-donutchart-animation", n_clicks=0, mb="md"),
+        dmc.DonutChart(
+            id="donutchart-animation",
+            data=get_data([100, 0, 0, 0]),
+            pieProps={"isAnimationActive": True},
+        ),
+    ]
+)
+
+
+@callback(
+    Output("donutchart-animation", "data"),
+    Input("btn-donutchart-animation", "n_clicks"),
+)
+def update(n):
+    if n % 2 == 0:
+        return get_data([400, 300, 600, 100])
+    return get_data([100, 0, 0, 0])
 
 ---
 
@@ -11,37 +50,10 @@
 The following props are specific to this component:
 
 ```
-chartLabel, children, clickData, clickSeriesName, data, endAngle, hoverData, hoverSeriesName, labelColor, paddingAngle, pieChartProps, pieProps, size, startAngle, strokeColor, strokeWidth, thickness, tooltipAnimationDuration, tooltipDataSource, tooltipProps, withLabels, withLabelsLine, withTooltip
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `chartLabel` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `clickData` | ? | See all-components.md for details |
-| `clickSeriesName` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `endAngle` | ? | See all-components.md for details |
-| `hoverData` | ? | See all-components.md for details |
-| `hoverSeriesName` | ? | See all-components.md for details |
-| `labelColor` | ? | See all-components.md for details |
-| `paddingAngle` | ? | See all-components.md for details |
-| `pieChartProps` | ? | See all-components.md for details |
-| `pieProps` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `startAngle` | ? | See all-components.md for details |
-| `strokeColor` | ? | See all-components.md for details |
-| `strokeWidth` | ? | See all-components.md for details |
-| `thickness` | ? | See all-components.md for details |
-| `tooltipAnimationDuration` | ? | See all-components.md for details |
-| `tooltipDataSource` | ? | See all-components.md for details |
-| `tooltipProps` | ? | See all-components.md for details |
-| `withLabels` | ? | See all-components.md for details |
-| `withLabelsLine` | ? | See all-components.md for details |
-| `withTooltip` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -62,21 +74,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.DonutChart(
-    id="my-donutchart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

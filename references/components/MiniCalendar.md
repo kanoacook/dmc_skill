@@ -2,7 +2,31 @@
 
 **Component**: `dmc.MiniCalendar`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+import dash_mantine_components as dmc
+from dash import callback, Input, Output
+
+
+dmc.Stack([
+    dmc.MiniCalendar(
+        defaultDate="2025-01-02",
+        value="2025-01-03",
+        id="mini-calendar"
+    ),
+    dmc.Text(id="mini-calendar-date", m="md")
+])
+
+@callback(
+    Output("mini-calendar-date", "children"),
+    Input("mini-calendar", "value"),
+)
+def update(d):
+    return f"You selected: {d}"
 
 ---
 
@@ -14,24 +38,7 @@ The following props are specific to this component:
 date, defaultDate, getDayProps, locale, maxDate, minDate, monthLabelFormat, numberOfDays, persisted_props, persistence, persistence_type, size, value
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `date` | ? | See all-components.md for details |
-| `defaultDate` | ? | See all-components.md for details |
-| `getDayProps` | ? | See all-components.md for details |
-| `locale` | ? | See all-components.md for details |
-| `maxDate` | ? | See all-components.md for details |
-| `minDate` | ? | See all-components.md for details |
-| `monthLabelFormat` | ? | See all-components.md for details |
-| `numberOfDays` | ? | See all-components.md for details |
-| `persisted_props` | ? | See all-components.md for details |
-| `persistence` | ? | See all-components.md for details |
-| `persistence_type` | ? | See all-components.md for details |
-| `size` | ? | See all-components.md for details |
-| `value` | ? | See all-components.md for details |
-
+**Props count**: 13
 
 ---
 
@@ -52,21 +59,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.MiniCalendar(
-    id="my-minicalendar",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`

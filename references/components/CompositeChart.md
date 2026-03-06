@@ -1,8 +1,45 @@
-# CompositeChart
+# Compositechart
 
-**Component**: `dmc.CompositeChart`
+**Component**: `dmc.Compositechart`
 
-**Version**: 2.4.0
+**Version**: 2.6.0
+
+---
+
+## Overview
+
+from dash import callback, Input, Output
+import dash_mantine_components as dmc
+from .data import data
+
+dmc.Group(
+    [
+        dmc.CompositeChart(
+            id="figure-compositechart-hover",
+            h=300,
+            data=data,
+            dataKey="date",
+            withLegend=True,
+            maxBarWidth=30,
+            series=[
+                {"name": "Tomatoes", "color": "rgba(18, 120, 255, 0.2)", "type": "bar"},
+                {"name": "Apples", "color": "red.8", "type": "line"},
+                {"name": "Oranges", "color": "yellow.8", "type": "area"},
+            ]
+        ),
+        dmc.Text(id="hoverdata-compositechart1"),
+        dmc.Text(id="hoverdata-compositechart2"),
+    ]
+)
+
+@callback(
+    Output("hoverdata-compositechart1", "children"),
+    Output("hoverdata-compositechart2", "children"),
+    Input("figure-compositechart-hover", "hoverData"),
+    Input("figure-compositechart-hover", "hoverSeriesName"),
+)
+def update(data, name):
+    return f"hoverData:  {data}", f"hoverSeriesName: {name}"
 
 ---
 
@@ -11,60 +48,10 @@
 The following props are specific to this component:
 
 ```
-activeDotProps, areaProps, barProps, children, clickData, clickSeriesName, composedChartProps, connectNulls, curveType, data, dataKey, dotProps, gridAxis, gridColor, gridProps, highlightHover, hoverData, hoverSeriesName, legendProps, lineProps, maxBarWidth, minBarSize, referenceLines, rightYAxisLabel, rightYAxisProps, series, strokeDasharray, strokeWidth, textColor, tickLine, tooltipAnimationDuration, tooltipProps, unit, valueFormatter, withBarValueLabel, withDots, withLegend, withPointLabels, withRightYAxis, withTooltip, withXAxis, withYAxis, xAxisLabel, xAxisProps, yAxisLabel, yAxisProps
+(See all-components.md for details)
 ```
 
-### Detailed Props
-
-| Prop | Type | Description |
-|------|------|-------------|
-| `activeDotProps` | ? | See all-components.md for details |
-| `areaProps` | ? | See all-components.md for details |
-| `barProps` | ? | See all-components.md for details |
-| `children` | ? | See all-components.md for details |
-| `clickData` | ? | See all-components.md for details |
-| `clickSeriesName` | ? | See all-components.md for details |
-| `composedChartProps` | ? | See all-components.md for details |
-| `connectNulls` | ? | See all-components.md for details |
-| `curveType` | ? | See all-components.md for details |
-| `data` | ? | See all-components.md for details |
-| `dataKey` | ? | See all-components.md for details |
-| `dotProps` | ? | See all-components.md for details |
-| `gridAxis` | ? | See all-components.md for details |
-| `gridColor` | ? | See all-components.md for details |
-| `gridProps` | ? | See all-components.md for details |
-| `highlightHover` | ? | See all-components.md for details |
-| `hoverData` | ? | See all-components.md for details |
-| `hoverSeriesName` | ? | See all-components.md for details |
-| `legendProps` | ? | See all-components.md for details |
-| `lineProps` | ? | See all-components.md for details |
-| `maxBarWidth` | ? | See all-components.md for details |
-| `minBarSize` | ? | See all-components.md for details |
-| `referenceLines` | ? | See all-components.md for details |
-| `rightYAxisLabel` | ? | See all-components.md for details |
-| `rightYAxisProps` | ? | See all-components.md for details |
-| `series` | ? | See all-components.md for details |
-| `strokeDasharray` | ? | See all-components.md for details |
-| `strokeWidth` | ? | See all-components.md for details |
-| `textColor` | ? | See all-components.md for details |
-| `tickLine` | ? | See all-components.md for details |
-| `tooltipAnimationDuration` | ? | See all-components.md for details |
-| `tooltipProps` | ? | See all-components.md for details |
-| `unit` | ? | See all-components.md for details |
-| `valueFormatter` | ? | See all-components.md for details |
-| `withBarValueLabel` | ? | See all-components.md for details |
-| `withDots` | ? | See all-components.md for details |
-| `withLegend` | ? | See all-components.md for details |
-| `withPointLabels` | ? | See all-components.md for details |
-| `withRightYAxis` | ? | See all-components.md for details |
-| `withTooltip` | ? | See all-components.md for details |
-| `withXAxis` | ? | See all-components.md for details |
-| `withYAxis` | ? | See all-components.md for details |
-| `xAxisLabel` | ? | See all-components.md for details |
-| `xAxisProps` | ? | See all-components.md for details |
-| `yAxisLabel` | ? | See all-components.md for details |
-| `yAxisProps` | ? | See all-components.md for details |
-
+**Props count**: 0
 
 ---
 
@@ -85,21 +72,9 @@ These props work on **every DMC component** and don't need to be listed per-comp
 
 ---
 
-## Example Usage
-
-```python
-import dash_mantine_components as dmc
-
-dmc.CompositeChart(
-    id="my-compositechart",
-    # Add your props here
-)
-```
-
----
-
 ## See Also
 
 - **Full reference**: `references/all-components.md`
+- **Component index**: `references/components/INDEX.md`
 - **Common mistakes**: `references/common-mistakes.md`
 - **Callback patterns**: `references/patterns.md`
